@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import ProductCard from '../components/shop/ProductCard.astro';
+import { products, categoryLabels } from '../data/products';
+
+const category = Astro.url.searchParams.get('category');
+const validCategory = category === 'llaveros' || category === 'collares' || category === 'accesorios' ? category : undefined;
+const visibleProducts = validCategory ? products.filter((product) => product.category === validCategory) : products;
+---
+<BaseLayout title="Tienda" description="Compra accesorios handmade de Michi Pop.">
+  <Nav />
+  <main class="px-5 pb-24 pt-36 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <header class="max-w-3xl">
+        <p class="text-xs font-bold uppercase tracking-[.22em]">Tienda Michi Pop</p>
+        <h1 class="display-font mt-3 text-6xl font-black tracking-[-.08em] md:text-8xl">Todo el pop.</h1>
+        <p class="mt-6 max-w-2xl text-base leading-7">Piezas pequeñas hechas a mano. Sin catálogo infinito, sin repetir porque sí.</p>
+      </header>
+
+      <div class="mt-10 flex flex-wrap gap-2 border-y border-linea py-4">
+        <a class={`rounded-full border border-tinta px-4 py-2 text-xs font-bold uppercase tracking-[.14em] ${!validCategory ? 'bg-tinta text-crema' : ''}`} href="/shop">Todo</a>
+        {Object.entries(categoryLabels).map(([key, label]) => (
+          <a class={`rounded-full border border-tinta px-4 py-2 text-xs font-bold uppercase tracking-[.14em] ${validCategory === key ? 'bg-tinta text-crema' : ''}`} href={`/shop?category=${key}`}>{label}</a>
+        ))}
+      </div>
+
+      <div class="mt-12 grid gap-x-5 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
+        {visibleProducts.map((product) => <ProductCard product={product} />)}
+      </div>
+
+      <section id="cart" class="mt-24 border-t border-linea pt-10">
+        <div class="max-w-xl">
+          <p class="text-xs font-bold uppercase tracking-[.22em]">Cesta</p>
+          <h2 class="display-font mt-3 text-4xl font-black tracking-[-.06em]">La compra todavía es de mentira.</h2>
+          <p class="mt-4 text-sm leading-6">Este prototipo no tiene checkout ni pagos. Las piezas y precios son mock data, tal como define el alcance actual.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
