@@ -1,0 +1,20 @@
+---
+import KawaiiLetter from './KawaiiLetter.astro';
+
+interface Props {
+  text: string;
+  colors: Array<'rosa' | 'amarillo' | 'lila' | 'menta' | 'naranja' | 'lima' | 'azul'>;
+  size?: 'md' | 'lg' | 'xl';
+  class?: string;
+}
+
+const { text, colors, size = 'lg', class: className = '' } = Astro.props;
+const rotations = [-2.2, 1.6, -1.2, 2.4, -2, 1.4, -1.7, 2.1];
+const scales = [1, .96, 1.03, .98, 1.04, .97, 1.02, .99];
+---
+<h1 class={`flex flex-wrap items-end justify-center gap-x-[0.02em] gap-y-[0.12em] ${className}`} aria-label={text}>
+  {text.split('').map((char, index) => char === ' '
+    ? <span class="basis-full h-0" aria-hidden="true"></span>
+    : <KawaiiLetter char={char} color={colors[index % colors.length]} rotate={rotations[index % rotations.length]} scale={scales[index % scales.length]} size={size} />
+  )}
+</h1>
