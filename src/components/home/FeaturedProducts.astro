@@ -1,0 +1,27 @@
+---
+import { products } from '../../data/products';
+import ProductCard from '../shop/ProductCard.astro';
+import RevealOnScroll from '../motion/RevealOnScroll';
+
+const featured = products.slice(0, 4);
+---
+<section class="px-5 py-24 lg:px-8">
+  <div class="mx-auto max-w-7xl">
+    <RevealOnScroll variant="side">
+      <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.22em]">Piezas que están pidiendo salir</p>
+          <h2 class="display-font mt-3 text-5xl font-black tracking-[-.07em] md:text-7xl">Pop del día.</h2>
+        </div>
+        <a class="soft-button rounded-full border border-tinta px-5 py-3 text-sm font-bold" href="/shop">Ver todo →</a>
+      </div>
+    </RevealOnScroll>
+    <div class="grid gap-x-5 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
+      {featured.map((product, index) => (
+        <RevealOnScroll client:load variant={index % 2 === 0 ? 'rise' : 'tilt'} class={index % 2 ? 'lg:translate-y-8' : ''}>
+          <ProductCard product={product} />
+        </RevealOnScroll>
+      ))}
+    </div>
+  </div>
+</section>
