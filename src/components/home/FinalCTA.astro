@@ -1,4 +1,5 @@
 ---
+import { siteUrl } from '../../lib/site';
 import KawaiiHeading from '../kawaii/KawaiiHeading.astro';
 ---
 <section class="px-5 py-24 lg:px-8">
@@ -6,6 +7,6 @@ import KawaiiHeading from '../kawaii/KawaiiHeading.astro';
     <p class="text-xs font-bold uppercase tracking-[.22em]">Tu próximo pequeño vicio</p>
     <KawaiiHeading text="PICK POP" colors={['rosa','lila','menta','naranja','azul','rosa','amarillo','menta']} size="lg" class="mt-7" />
     <p class="mx-auto mt-7 max-w-xl text-base leading-7">Piezas pequeñas. Colores demasiado bonitos. Cero ganas de parecerse a todo lo demás.</p>
-    <a href="/shop" class="soft-button mt-8 inline-flex rounded-full border border-tinta bg-tinta px-7 py-4 text-sm font-bold text-crema">Entrar en la tienda</a>
+    <a href={siteUrl('/shop')} class="soft-button mt-8 inline-flex rounded-full border border-tinta bg-tinta px-7 py-4 text-sm font-bold text-crema">Entrar en la tienda</a>
   </div>
 </section>
