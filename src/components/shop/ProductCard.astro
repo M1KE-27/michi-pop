@@ -10,15 +10,18 @@ const colorClass: Record<string, string> = {
 <article class={`group ${compact ? '' : 'border-t border-linea pt-4'}`}>
   <a href={`/product/${product.slug}`} class="block">
     <div class="relative overflow-hidden rounded-[1.15rem] bg-[#F8EEE7] transition-transform duration-300 group-hover:-translate-y-1">
-      <img
-        src={`/products/${product.image}.svg`}
-        alt={`${product.name}, ${product.category} handmade de Michi Pop`}
-        width="400"
-        height="400"
-        loading={compact ? 'eager' : 'lazy'}
-        decoding="async"
-        class="aspect-square w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.035]"
-      />
+      <picture>
+        <source srcset={`/products/${product.image}.webp`} type="image/webp" />
+        <img
+          src={`/products/${product.image}.svg`}
+          alt={`${product.name}, ${product.category} handmade de Michi Pop`}
+          width="400"
+          height="400"
+          loading={compact ? 'eager' : 'lazy'}
+          decoding="async"
+          class="aspect-square w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.035]"
+        />
+      </picture>
       <span class="pointer-events-none absolute inset-x-3 bottom-3 flex justify-end opacity-0 transition-opacity duration-300 group-hover:opacity-100">
         <span class="rounded-full border border-tinta bg-crema/95 px-3 py-1.5 text-[10px] font-black uppercase tracking-[.14em]">Ver pieza</span>
       </span>
