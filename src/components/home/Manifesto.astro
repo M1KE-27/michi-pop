@@ -1,0 +1,23 @@
+---
+import RevealOnScroll from '../motion/RevealOnScroll';
+import Heart from '../icons/Heart.astro';
+import Star from '../icons/Star.astro';
+---
+<section class="px-5 py-12 lg:px-8">
+  <RevealOnScroll client:load variant="scale">
+    <div class="mx-auto grid max-w-7xl overflow-hidden rounded-[3rem_1.5rem_3rem_1.5rem] border border-tinta bg-crema md:grid-cols-[.8fr_1.2fr]">
+      <div class="relative min-h-[22rem] bg-menta p-8 md:min-h-full md:p-10">
+        <div class="absolute left-10 top-10 rotate-[-12deg]"><Star size={48} /></div>
+        <div class="absolute bottom-12 right-10 rotate-[9deg]"><Heart size={55} fill="#EE8FAF" /></div>
+        <div class="absolute bottom-8 left-12 h-24 w-24 rounded-[2rem] bg-lila/80 rotate-[14deg]"></div>
+        <div class="accent-font absolute bottom-8 right-10 text-4xl">made by hand</div>
+      </div>
+      <div class="p-8 md:p-14">
+        <p class="text-xs font-bold uppercase tracking-[.22em]">Nuestro pequeño manifiesto</p>
+        <h2 class="display-font mt-4 max-w-3xl text-5xl font-black tracking-[-.07em] md:text-7xl">No queremos que combine. Queremos que tenga gracia.</h2>
+        <p class="mt-8 max-w-2xl text-base leading-7">Michi Pop nace de mezclar cuentas, colores y pequeños charms hasta que una pieza deja de parecer una cosa más y empieza a sentirse tuya. Hacemos pocas unidades, corregimos detalles y dejamos que cada colección tenga un poco de personalidad.</p>
+        <a href="/about" class="soft-button mt-8 inline-flex rounded-full border border-tinta px-5 py-3 text-sm font-bold">Leer nuestra historia →</a>
+      </div>
+    </div>
+  </RevealOnScroll>
+</section>
