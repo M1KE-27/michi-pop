@@ -5,6 +5,8 @@ import Footer from '../components/layout/Footer.astro';
 import ProductCard from '../components/shop/ProductCard.astro';
 import { products, categoryLabels } from '../data/products';
 
+const BASE_URL = import.meta.env.BASE_URL;
+const url = (path: string) => `${BASE_URL}${path.replace(/^\//, '')}`;
 const rawCategory = Astro.url.searchParams.get('category')?.toLowerCase();
 const validCategory = rawCategory === 'llaveros' || rawCategory === 'collares' || rawCategory === 'accesorios' ? rawCategory : undefined;
 const visibleProducts = validCategory ? products.filter((product) => product.category === validCategory) : products;
@@ -20,9 +22,9 @@ const visibleProducts = validCategory ? products.filter((product) => product.cat
       </header>
 
       <nav class="shop-filters mt-8 flex gap-2 overflow-x-auto border-y border-linea py-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="Filtrar productos por categoría">
-        <a class={`shrink-0 rounded-full border border-tinta px-4 py-2 text-[11px] font-bold uppercase tracking-[.14em] transition-colors ${!validCategory ? 'bg-tinta text-crema' : 'bg-transparent'}`} href="/shop">Todo</a>
+        <a class={`shrink-0 rounded-full border border-tinta px-4 py-2 text-[11px] font-bold uppercase tracking-[.14em] transition-colors ${!validCategory ? 'bg-tinta text-crema' : 'bg-transparent'}`} href={url('/shop')}>Todo</a>
         {Object.entries(categoryLabels).map(([key, label]) => (
-          <a class={`shrink-0 rounded-full border border-tinta px-4 py-2 text-[11px] font-bold uppercase tracking-[.14em] transition-colors ${validCategory === key ? 'bg-tinta text-crema' : 'bg-transparent'}`} href={`/shop?category=${encodeURIComponent(key)}`}>{label}</a>
+          <a class={`shrink-0 rounded-full border border-tinta px-4 py-2 text-[11px] font-bold uppercase tracking-[.14em] transition-colors ${validCategory === key ? 'bg-tinta text-crema' : 'bg-transparent'}`} href={url(`/shop?category=${encodeURIComponent(key)}`)}>{label}</a>
         ))}
       </nav>
 
