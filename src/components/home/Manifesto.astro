@@ -10,8 +10,8 @@ import RevealOnScroll from '../motion/RevealOnScroll';
         <span class="absolute bottom-6 right-7 text-xl text-tinta">♥</span>
       </div>
 
-      <div class="grid place-items-center bg-crema px-7 py-4 md:px-6">
-        <img src="/brand/flower-bead.webp" alt="Flor hecha con cuentas de colores" width="420" height="340" loading="lazy" decoding="async" class="h-auto w-full max-w-[220px] object-contain" />
+      <div class="flower-stage group relative grid min-h-[13.5rem] place-items-center bg-crema px-7 py-4 md:min-h-[10.8rem] md:px-6" data-flower-stage>
+        <img src="/brand/flower-bead.webp" alt="Flor hecha con cuentas de colores" width="420" height="340" loading="lazy" decoding="async" class="flower-art h-auto w-full max-w-[220px] object-contain will-change-transform" data-flower-art />
       </div>
 
       <div class="flex flex-col justify-center p-7 md:p-8">
@@ -38,3 +38,22 @@ import RevealOnScroll from '../motion/RevealOnScroll';
     </div>
   </RevealOnScroll>
 </section>
+<script>
+  const flowerStage = document.querySelector('[data-flower-stage]');
+  const flowerArt = document.querySelector('[data-flower-art]');
+
+  if (flowerStage instanceof HTMLElement && flowerArt instanceof HTMLElement) {
+    const reset = () => {
+      flowerArt.style.transform = 'translate3d(0,0,0) rotate(0deg) scale(1)';
+    };
+
+    flowerStage.addEventListener('pointermove', (event) => {
+      const rect = flowerStage.getBoundingClientRect();
+      const x = (event.clientX - rect.left) / rect.width - 0.5;
+      const y = (event.clientY - rect.top) / rect.height - 0.5;
+      flowerArt.style.transform = `translate3d(${x * 10}px, ${y * 8}px, 0) rotate(${x * 3}deg) scale(1.035)`;
+    });
+
+    flowerStage.addEventListener('pointerleave', reset);
+  }
+</script>
