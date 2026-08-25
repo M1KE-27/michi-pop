@@ -1,0 +1,43 @@
+---
+interface Props {
+  char: string;
+  color: 'rosa' | 'amarillo' | 'lila' | 'menta' | 'naranja' | 'lima' | 'azul';
+  rotate?: number;
+  scale?: number;
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+}
+
+const { char, color, rotate = 0, scale = 1, size = 'lg' } = Astro.props;
+
+const gradients = {
+  rosa: 'linear-gradient(150deg, #F7A8C4 5%, #EE8FAF 62%, #D7779A 100%)',
+  amarillo: 'linear-gradient(150deg, #FFE071 5%, #F7D24A 62%, #D7B22E 100%)',
+  lila: 'linear-gradient(150deg, #C7B2E2 5%, #B49BD5 62%, #927AB7 100%)',
+  menta: 'linear-gradient(150deg, #A6DCCE 5%, #8CCEBE 62%, #68AE9E 100%)',
+  naranja: 'linear-gradient(150deg, #FFB45D 5%, #F49A3B 62%, #CF721B 100%)',
+  lima: 'linear-gradient(150deg, #CEE76B 5%, #B8CE55 62%, #91A13C 100%)',
+  azul: 'linear-gradient(150deg, #B5DCF1 5%, #8EC7E4 62%, #6EA8C4 100%)',
+} as const;
+
+const shadows = {
+  rosa: '0 .24em 0 #CD6E92, 0 .52em .85em rgba(72,40,56,.17)',
+  amarillo: '0 .24em 0 #D3A91D, 0 .52em .85em rgba(72,40,56,.17)',
+  lila: '0 .24em 0 #8B73B0, 0 .52em .85em rgba(72,40,56,.17)',
+  menta: '0 .24em 0 #5EA995, 0 .52em .85em rgba(72,40,56,.17)',
+  naranja: '0 .24em 0 #CA6E16, 0 .52em .85em rgba(72,40,56,.17)',
+  lima: '0 .24em 0 #899C31, 0 .52em .85em rgba(72,40,56,.17)',
+  azul: '0 .24em 0 #629CB8, 0 .52em .85em rgba(72,40,56,.17)',
+} as const;
+
+const fontSize = {
+  sm: 'clamp(2.3rem, 9vw, 4rem)',
+  md: 'clamp(3rem, 8vw, 5.5rem)',
+  lg: 'clamp(4rem, 11vw, 9rem)',
+  xl: 'clamp(5rem, 15vw, 13rem)',
+}[size];
+---
+<span
+  class="kawaii-letter display-font"
+  style={`--letter-gradient:${gradients[color]};--letter-shadow:${shadows[color]};--rotate:${rotate}deg;--scale:${scale};font-size:${fontSize};`}
+  aria-hidden="true"
+>{char}</span>
