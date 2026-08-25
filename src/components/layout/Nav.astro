@@ -8,7 +8,7 @@ const navItems = [
 const currentPath = Astro.url.pathname;
 ---
 <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-crema/82 transition-[background-color,border-color,backdrop-filter] duration-300">
-  <div class="mx-auto flex max-w-[1304px] items-center justify-between px-5 py-4.5 lg:px-0">
+  <div class="mx-auto flex max-w-[1304px] items-center justify-between px-5 py-4 lg:px-0">
     <a href="/" class="display-font text-[1.55rem] font-black tracking-[-0.07em]" aria-label="Michi Pop, inicio">
       <span class="text-rosa">MI</span><span class="text-amarillo">C</span><span class="text-lila">H</span><span class="text-menta">I</span><span class="ml-1 text-azul">POP</span>
     </a>
@@ -17,7 +17,7 @@ const currentPath = Astro.url.pathname;
       {navItems.map((item) => (
         <a class:list={['relative py-2 transition-colors hover:text-tinta', currentPath === item.href ? 'after:absolute after:inset-x-0 after:-bottom-0.5 after:mx-auto after:h-0.5 after:w-5 after:rounded-full after:bg-rosa' : '']} href={item.href}>{item.label}</a>
       ))}
-      <a class="soft-button rounded-full border border-tinta px-4.5 py-2.5" href="/shop#cart">Cesta (0)</a>
+      <a class="soft-button rounded-full border border-tinta px-4 py-2.5" href="/shop#cart">Cesta (0)</a>
     </nav>
 
     <button id="mobile-menu" class="rounded-full border border-tinta px-3 py-2 text-[10px] font-black uppercase tracking-[.14em] md:hidden" aria-expanded="false" aria-controls="mobile-nav">Menú</button>
