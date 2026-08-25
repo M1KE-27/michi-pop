@@ -4,8 +4,16 @@ import Nav from '../components/layout/Nav.astro';
 import Footer from '../components/layout/Footer.astro';
 import KawaiiHeading from '../components/kawaii/KawaiiHeading.astro';
 import Star from '../components/icons/Star.astro';
+
+const feature = Astro.url.searchParams.get('feature');
+const isSocial = feature === 'social';
+const eyebrow = isSocial ? 'Próximamente en Michi Pop' : 'Estamos preparando algo';
+const title = isSocial ? 'REDES SOCIALES' : 'PRÓXIMAMENTE';
+const message = isSocial
+  ? 'Muy pronto podrás seguir el universo de Michi Pop también fuera de la tienda. Estamos preparando ese espacio con la misma calma y el mismo color.'
+  : 'Estamos preparando una forma de elegir colores y detalles para algunas piezas. Esta pantalla es intencionadamente estática en esta fase.';
 ---
-<BaseLayout title="Personaliza" description="Próximamente podrás personalizar piezas de Michi Pop.">
+<BaseLayout title={isSocial ? 'Redes sociales — Próximamente' : 'Personaliza — Próximamente'} description={message}>
   <Nav />
   <main class="min-h-screen px-5 pb-24 pt-40 lg:px-8">
     <div class="mx-auto flex max-w-5xl flex-col items-center text-center">
@@ -13,8 +21,9 @@ import Star from '../components/icons/Star.astro';
         <Star size={42} />
         <div class="absolute -right-12 top-3 h-4 w-4 rounded-full bg-menta"></div>
       </div>
-      <KawaiiHeading text="PRÓXIMAMENTE" colors={['rosa','amarillo','lila','menta','naranja','azul','lima','rosa','amarillo','lila','menta','azul']} size="lg" class="mt-8" />
-      <p class="mt-8 max-w-xl text-base leading-7">Estamos preparando una forma de elegir colores y detalles para algunas piezas. Esta pantalla es intencionadamente estática en esta fase.</p>
+      <p class="mt-6 text-[10px] font-black uppercase tracking-[.22em]">{eyebrow}</p>
+      <KawaiiHeading text={title} colors={['rosa','amarillo','lila','menta','naranja','azul','lima','rosa','amarillo','lila','menta','azul','rosa','amarillo']} size="lg" class="mt-8" />
+      <p class="mt-8 max-w-xl text-base leading-7">{message}</p>
       <a href="/shop" class="soft-button mt-8 rounded-full border border-tinta bg-tinta px-6 py-3 text-sm font-bold text-crema">Volver a la tienda</a>
     </div>
   </main>
