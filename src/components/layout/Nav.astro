@@ -1,23 +1,32 @@
-<header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent transition-[background-color,border-color,backdrop-filter] duration-300">
+---
+const navItems = [
+  { href: '/', label: 'Inicio' },
+  { href: '/shop', label: 'Tienda' },
+  { href: '/customize', label: 'Personaliza' },
+  { href: '/about', label: 'Sobre nosotros' },
+];
+const currentPath = Astro.url.pathname;
+---
+<header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-crema/80 transition-[background-color,border-color,backdrop-filter] duration-300">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-    <a href="/" class="display-font text-xl font-black tracking-[-0.06em]" aria-label="Michi Pop, inicio">
-      <span class="text-rosa">MI</span><span class="text-amarillo">C</span><span class="text-lila">H</span><span class="text-menta">I</span>
-      <span class="ml-1 text-azul">POP</span>
+    <a href="/" class="display-font text-[1.45rem] font-black tracking-[-0.07em]" aria-label="Michi Pop, inicio">
+      <span class="text-rosa">MI</span><span class="text-amarillo">C</span><span class="text-lila">H</span><span class="text-menta">I</span><span class="ml-1 text-azul">POP</span>
     </a>
-    <nav class="hidden items-center gap-7 text-xs font-semibold uppercase tracking-[.18em] md:flex" aria-label="Principal">
-      <a class="soft-button rounded-full px-2 py-1 hover:bg-white/70" href="/shop">Tienda</a>
-      <a class="soft-button rounded-full px-2 py-1 hover:bg-white/70" href="/customize">Personaliza</a>
-      <a class="soft-button rounded-full px-2 py-1 hover:bg-white/70" href="/about">Sobre nosotros</a>
-      <a class="soft-button rounded-full border border-tinta px-4 py-2" href="/shop#cart">Cesta <span aria-label="0 productos">(0)</span></a>
+
+    <nav class="hidden items-center gap-8 text-[11px] font-black uppercase tracking-[.18em] md:flex" aria-label="Principal">
+      {navItems.map((item) => (
+        <a class:list={['relative py-2 transition-colors hover:text-tinta', currentPath === item.href ? 'after:absolute after:inset-x-0 after:-bottom-0.5 after:mx-auto after:h-0.5 after:w-5 after:rounded-full after:bg-rosa' : '']} href={item.href}>{item.label}</a>
+      ))}
+      <a class="soft-button rounded-full border border-tinta px-4 py-2.5" href="/shop#cart">Cesta (0)</a>
     </nav>
-    <button id="mobile-menu" class="md:hidden rounded-full border border-tinta px-3 py-2 text-xs font-bold uppercase tracking-[.14em]" aria-expanded="false" aria-controls="mobile-nav">Menu</button>
+
+    <button id="mobile-menu" class="rounded-full border border-tinta px-3 py-2 text-[10px] font-black uppercase tracking-[.14em] md:hidden" aria-expanded="false" aria-controls="mobile-nav">Menú</button>
   </div>
-  <nav id="mobile-nav" class="hidden border-t border-linea bg-crema/95 px-5 pb-5 pt-3 md:hidden" aria-label="Principal móvil">
+
+  <nav id="mobile-nav" class="hidden border-t border-linea bg-crema/97 px-5 pb-5 pt-3 md:hidden" aria-label="Principal móvil">
     <div class="grid gap-1 text-sm font-semibold uppercase tracking-[.14em]">
-      <a class="rounded-2xl px-3 py-3 hover:bg-white" href="/shop">Tienda</a>
-      <a class="rounded-2xl px-3 py-3 hover:bg-white" href="/customize">Personaliza</a>
-      <a class="rounded-2xl px-3 py-3 hover:bg-white" href="/about">Sobre nosotros</a>
-      <a class="rounded-2xl bg-tinta px-3 py-3 text-crema" href="/shop#cart">Cesta (0)</a>
+      {navItems.map((item) => <a class="rounded-xl px-3 py-3 hover:bg-white/60" href={item.href}>{item.label}</a>)}
+      <a class="rounded-xl bg-tinta px-3 py-3 text-crema" href="/shop#cart">Cesta (0)</a>
     </div>
   </nav>
 </header>
