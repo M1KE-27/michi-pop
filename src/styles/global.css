@@ -31,7 +31,9 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .site-shell { overflow-x: clip; }
 .display-font { font-family: 'Mona Sans', 'Trebuchet MS', sans-serif; }
-.accent-font { font-family: 'Caveat', cursive; }
+.accent-font,
+.brand-hand { font-family: 'Caveat', cursive; }
+.brand-serif { font-family: Georgia, 'Times New Roman', serif; }
 
 .kawaii-stage { perspective: 900px; }
 .kawaii-letter {
