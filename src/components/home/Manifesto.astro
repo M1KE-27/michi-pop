@@ -1,33 +1,29 @@
 ---
-import RevealOnScroll from '../motion/RevealOnScroll';
-
 const BASE_URL = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '/');
 const asset = (path: string) => `${BASE_URL}${path.replace(/^\//, '')}`;
 ---
 <section class="px-5 py-7 lg:px-8 lg:py-8">
-  <RevealOnScroll client:load variant="scale">
-    <div class="mx-auto grid max-w-[1304px] overflow-hidden rounded-[1.15rem] bg-white/45 md:grid-cols-[.88fr_1fr_2.2fr]">
-      <div class="relative min-h-[13.5rem] bg-rosa p-7 md:min-h-[10.8rem] md:p-8">
-        <p class="brand-serif max-w-[14rem] text-3xl leading-[.98] sm:text-[2.15rem]">Detrás de cada pieza</p>
-        <p class="brand-hand mt-4 max-w-[15rem] text-2xl leading-tight">hay una idea, un color y muchas ganas de crear.</p>
-        <span class="absolute bottom-6 right-7 text-xl text-tinta">♥</span>
-      </div>
+  <div class="home-reveal mx-auto grid max-w-[1304px] overflow-hidden rounded-[1.15rem] bg-white/45 md:grid-cols-[.88fr_1fr_2.2fr]">
+    <div class="relative min-h-[13.5rem] bg-rosa p-7 md:min-h-[10.8rem] md:p-8">
+      <p class="brand-serif max-w-[14rem] text-3xl leading-[.98] sm:text-[2.15rem]">Detrás de cada pieza</p>
+      <p class="brand-hand mt-4 max-w-[15rem] text-2xl leading-tight">hay una idea, un color y muchas ganas de crear.</p>
+      <span class="absolute bottom-6 right-7 text-xl text-tinta">♥</span>
+    </div>
 
-      <div class="flower-stage group relative grid min-h-[13.5rem] place-items-center bg-crema px-7 py-4 md:min-h-[10.8rem] md:px-6" data-flower-stage>
-        <img src={asset('/brand/flower-bead.webp')} alt="Flor hecha con cuentas de colores" width="420" height="340" loading="lazy" decoding="async" class="flower-art h-auto w-full max-w-[220px] object-contain will-change-transform" data-flower-art />
-      </div>
+    <div class="flower-stage group relative grid min-h-[13.5rem] place-items-center bg-crema px-7 py-4 md:min-h-[10.8rem] md:px-6" data-flower-stage>
+      <img src={asset('/brand/flower-bead.webp')} alt="Flor hecha con cuentas de colores" width="420" height="340" loading="lazy" decoding="async" class="flower-art h-auto w-full max-w-[220px] object-contain" data-flower-art />
+    </div>
 
-      <div class="flex flex-col justify-center p-7 md:p-8">
-        <p class="brand-serif max-w-[34rem] text-3xl leading-[1.02] sm:text-[2.15rem]">Una joven emprendedora que convierte pequeñas ideas en accesorios únicos.</p>
-        <p class="mt-4 max-w-[38rem] text-sm leading-6">Todo empieza con una cuenta de cuentas, algo de inspiración y muchas ganas de crear. Gracias por apoyar lo pequeño, lo real y lo hecho a mano.</p>
-        <div class="mt-5 grid grid-cols-3 gap-4 border-t border-linea pt-5">
-          <div><div class="mb-2 text-2xl text-rosa">♡</div><p class="text-[11px] font-black">Hecho a mano</p><p class="mt-1 text-[10px] leading-4 text-tinta/70">Cada pieza está hecha a mano, con cuidado y mucha dedicación.</p></div>
-          <div><div class="mb-2 text-2xl text-amarillo">☆</div><p class="text-[11px] font-black">Colores y alegría</p><p class="mt-1 text-[10px] leading-4 text-tinta/70">Pasteles, perlitas y formas divertidas para iluminar tu día.</p></div>
-          <div><div class="mb-2 text-2xl text-menta">♡</div><p class="text-[11px] font-black">Pequeñas cosas</p><p class="mt-1 text-[10px] leading-4 text-tinta/70">Creemos en el poder de los pequeños detalles que te hacen sonreír.</p></div>
-        </div>
+    <div class="flex flex-col justify-center p-7 md:p-8">
+      <p class="brand-serif max-w-[34rem] text-3xl leading-[1.02] sm:text-[2.15rem]">Una joven emprendedora que convierte pequeñas ideas en accesorios únicos.</p>
+      <p class="mt-4 max-w-[38rem] text-sm leading-6">Todo empieza con una cuenta de cuentas, algo de inspiración y muchas ganas de crear. Gracias por apoyar lo pequeño, lo real y lo hecho a mano.</p>
+      <div class="mt-5 grid grid-cols-3 gap-4 border-t border-linea pt-5">
+        <div><div class="mb-2 text-2xl text-rosa">♡</div><p class="text-[11px] font-black">Hecho a mano</p><p class="mt-1 text-[10px] leading-4 text-tinta/70">Cada pieza está hecha a mano, con cuidado y mucha dedicación.</p></div>
+        <div><div class="mb-2 text-2xl text-amarillo">☆</div><p class="text-[11px] font-black">Colores y alegría</p><p class="mt-1 text-[10px] leading-4 text-tinta/70">Pasteles, perlitas y formas divertidas para iluminar tu día.</p></div>
+        <div><div class="mb-2 text-2xl text-menta">♡</div><p class="text-[11px] font-black">Pequeñas cosas</p><p class="mt-1 text-[10px] leading-4 text-tinta/70">Creemos en el poder de los pequeños detalles que te hacen sonreír.</p></div>
       </div>
     </div>
-  </RevealOnScroll>
+  </div>
 </section>
 <script>
   const flowerStage = document.querySelector('[data-flower-stage]');
