@@ -78,11 +78,22 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .soft-button:active { transform: translateY(1px) scale(.985); }
 .nav-solid { background: rgba(250,246,239,.92); backdrop-filter: blur(16px); border-bottom-color: rgba(228,222,215,.95); }
 
+/* The coming-soon word is a single visual unit: never orphan the final E. */
+.customize-heading { width: 100%; overflow: visible; }
+.customize-heading h1 { flex-wrap: nowrap; gap: .012em; width: max-content; max-width: 100%; margin-inline: auto; transform-origin: center center; }
+.customize-heading .kawaii-letter { font-size: clamp(2.9rem, 8.2vw, 6.8rem) !important; }
+
 @keyframes navPillIn { 0% { opacity: .7; transform: translateY(2px) scale(.95); } 55% { opacity: 1; transform: translateY(-1px) scale(1.035); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 @keyframes revealUp { from { opacity: 0; transform: translate3d(0,18px,0); } to { opacity: 1; transform: translate3d(0,0,0); } }
 @keyframes aboutFloat { 0%,100% { transform: translate3d(0,0,0) rotate(0deg); } 50% { transform: translate3d(0,-4px,0) rotate(.3deg); } }
 @keyframes aboutFlowerFloat { 0%,100% { transform: translate3d(0,0,0) rotate(0deg); } 50% { transform: translate3d(0,-7px,0) rotate(-1deg); } }
 
 @media (max-width:1023px) { .hero-art { mix-blend-mode: multiply; } }
-@media (max-width:767px) { .michi-logo { font-size: .96rem; } .miche-logo--footer { font-size: 1.05rem; } .nav-pill { min-height: 34px; } }
+@media (max-width:767px) {
+  .michi-logo { font-size: .96rem; }
+  .miche-logo--footer { font-size: 1.05rem; }
+  .nav-pill { min-height: 34px; }
+  .customize-heading h1 { transform: scale(.88); }
+  .customize-heading .kawaii-letter { font-size: clamp(2.15rem, 9.1vw, 4.25rem) !important; }
+}
 @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; } .kawaii-letter { transform: rotate(var(--rotate)) scale(var(--scale)); } .flower-art,.about-flower,.about-board,.about-reveal,.home-reveal { animation:none !important; opacity:1 !important; transform:none !important; } .nav-pill--active { animation:none !important; } }
