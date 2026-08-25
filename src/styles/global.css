@@ -33,7 +33,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .display-font { font-family: 'Mona Sans', 'Trebuchet MS', sans-serif; }
 .accent-font { font-family: 'Caveat', cursive; }
 
+.kawaii-stage { perspective: 900px; }
 .kawaii-letter {
+  --pointer-x: 0;
+  --pointer-y: 0;
   position: relative;
   display: inline-flex;
   align-items: center;
@@ -43,9 +46,14 @@ button, a { -webkit-tap-highlight-color: transparent; }
   border-radius: .28em .31em .34em .26em;
   background: var(--letter-gradient);
   box-shadow: var(--letter-shadow), inset .05em .05em 0 rgba(255,255,255,.55), inset -.06em -.08em .08em rgba(87,49,67,.13);
-  transform: rotate(var(--rotate)) scale(var(--scale));
+  transform: translate3d(calc(var(--pointer-x) * 7px), calc(var(--pointer-y) * 6px), 0) rotateX(calc(var(--pointer-y) * -5deg)) rotateY(calc(var(--pointer-x) * 7deg)) rotate(var(--rotate)) scale(var(--scale));
   transform-origin: center bottom;
+  transition: transform .22s cubic-bezier(.2,.8,.2,1), box-shadow .22s ease;
   isolation: isolate;
+  will-change: transform;
+}
+.kawaii-letter:hover {
+  box-shadow: var(--letter-shadow), inset .05em .05em 0 rgba(255,255,255,.62), inset -.06em -.08em .08em rgba(87,49,67,.12), 0 .9em 1.7em rgba(72,40,56,.10);
 }
 .kawaii-letter::after {
   content: '';
@@ -64,9 +72,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .soft-button:hover { transform: translateY(-2px) scale(1.015); }
 .soft-button:active { transform: translateY(1px) scale(.985); }
 
-.nav-solid { background: rgba(255,245,239,.88); backdrop-filter: blur(16px); border-bottom-color: rgba(226,214,208,.9); }
+.nav-solid { background: rgba(255,245,239,.90); backdrop-filter: blur(18px); border-bottom-color: rgba(226,214,208,.9); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
+  .kawaii-letter { transform: rotate(var(--rotate)) scale(var(--scale)); }
 }
