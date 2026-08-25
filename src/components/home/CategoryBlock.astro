@@ -1,0 +1,46 @@
+---
+import BalloonDog from '../icons/BalloonDog.astro';
+import Bead from '../icons/Bead.astro';
+import Heart from '../icons/Heart.astro';
+import Star from '../icons/Star.astro';
+import Flower from '../icons/Flower.astro';
+import type { ProductCategory } from '../../data/products';
+
+interface Props { category: ProductCategory; title: string; blurb: string; href: string; }
+const { category, title, blurb, href } = Astro.props;
+---
+{category === 'llaveros' && (
+  <article class="relative min-h-[30rem] overflow-hidden rounded-[3rem_1.5rem_3rem_2rem] border border-tinta bg-rosa p-7 md:p-10">
+    <div class="relative z-10 max-w-xs">
+      <p class="mb-4 text-xs font-bold uppercase tracking-[.22em]">01 / charms</p>
+      <h3 class="display-font text-6xl font-black tracking-[-.07em] md:text-7xl">{title}</h3>
+      <p class="mt-5 max-w-[16rem] text-sm leading-6">{blurb}</p>
+      <a class="soft-button mt-7 inline-flex rounded-full bg-tinta px-5 py-3 text-sm font-bold text-crema" href={href}>Ver llaveros →</a>
+    </div>
+    <div class="absolute -bottom-2 -right-2 rotate-[7deg]"><BalloonDog size={190} /></div>
+  </article>
+)}
+{category === 'collares' && (
+  <article class="relative min-h-[25rem] overflow-hidden rounded-[1.5rem_3rem_2rem_3rem] border border-tinta bg-azul p-7 md:p-9">
+    <div class="absolute right-5 top-5 flex items-center gap-1"><Bead size={29} fill="#B49BD5" /><Bead size={22} fill="#F7D24A" /></div>
+    <p class="text-xs font-bold uppercase tracking-[.22em]">02 / beads</p>
+    <div class="mt-12 max-w-sm md:mt-16">
+      <h3 class="display-font text-6xl font-black tracking-[-.07em] md:text-7xl">{title}</h3>
+      <p class="mt-4 max-w-xs text-sm leading-6">{blurb}</p>
+      <a class="soft-button mt-6 inline-flex rounded-full border border-tinta bg-crema px-5 py-3 text-sm font-bold" href={href}>Ver collares →</a>
+    </div>
+    <div class="absolute bottom-3 right-9"><Heart size={62} fill="#EE8FAF" /></div>
+  </article>
+)}
+{category === 'accesorios' && (
+  <article class="relative min-h-[22rem] overflow-hidden rounded-[2rem_3rem_1.5rem_3rem] border border-tinta bg-lima p-7 md:p-9">
+    <div class="absolute right-7 top-7 rotate-[-9deg]"><Star size={55} /></div>
+    <div class="absolute bottom-5 right-20 rotate-12"><Flower size={54} /></div>
+    <p class="text-xs font-bold uppercase tracking-[.22em]">03 / extra pop</p>
+    <div class="mt-10 md:mt-14">
+      <h3 class="display-font text-5xl font-black tracking-[-.07em] md:text-6xl">{title}</h3>
+      <p class="mt-4 max-w-sm text-sm leading-6">{blurb}</p>
+      <a class="soft-button mt-6 inline-flex rounded-full border border-tinta px-5 py-3 text-sm font-bold" href={href}>Ver accesorios →</a>
+    </div>
+  </article>
+)}
