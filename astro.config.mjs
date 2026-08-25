@@ -3,7 +3,12 @@ import react from '@astrojs/react';
 import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  integrations: [react(), tailwind()],
+  site: 'https://m1ke-27.github.io',
+  base: '/michi-pop',
   output: 'static',
+  build: {
+    format: 'directory',
+  },
+  integrations: [react(), tailwind()],
   compressHTML: true,
 });
