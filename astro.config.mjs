@@ -9,6 +9,9 @@ export default defineConfig({
   build: {
     format: 'directory',
   },
+  server: {
+    allowedHosts: ['.trycloudflare.com'],
+  },
   integrations: [react(), tailwind()],
   compressHTML: true,
 });
