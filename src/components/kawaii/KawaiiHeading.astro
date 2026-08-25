@@ -6,15 +6,40 @@ interface Props {
   colors: Array<'rosa' | 'amarillo' | 'lila' | 'menta' | 'naranja' | 'lima' | 'azul'>;
   size?: 'md' | 'lg' | 'xl';
   class?: string;
+  interactive?: boolean;
 }
 
-const { text, colors, size = 'lg', class: className = '' } = Astro.props;
-const rotations = [-2.2, 1.6, -1.2, 2.4, -2, 1.4, -1.7, 2.1];
-const scales = [1, .96, 1.03, .98, 1.04, .97, 1.02, .99];
+const { text, colors, size = 'lg', class: className = '', interactive = true } = Astro.props;
+const rotations = [-2.2, 1.6, -1.2, 2.4, -2, 1.4, -1.7, 2.1, -1.2, 2.4];
+const scales = [1, .96, 1.03, .98, 1.04, .97, 1.02, .99, 1.01, .98];
 ---
-<h1 class={`flex flex-wrap items-end justify-center gap-x-[0.02em] gap-y-[0.12em] ${className}`} aria-label={text}>
-  {text.split('').map((char, index) => char === ' '
-    ? <span class="basis-full h-0" aria-hidden="true"></span>
-    : <KawaiiLetter char={char} color={colors[index % colors.length]} rotate={rotations[index % rotations.length]} scale={scales[index % scales.length]} size={size} />
-  )}
-</h1>
+<div class={`kawaii-stage ${className}`} data-kawaii-stage={interactive ? 'true' : undefined}>
+  <h1 class="flex flex-wrap items-end justify-center gap-x-[0.02em] gap-y-[0.12em]" aria-label={text}>
+    {text.split('').map((char, index) => char === ' '
+      ? <span class="basis-full h-0" aria-hidden="true"></span>
+      : <KawaiiLetter char={char} color={colors[index % colors.length]} rotate={rotations[index % rotations.length]} scale={scales[index % scales.length]} size={size} interactive={interactive} />
+    )}
+  </h1>
+</div>
+
+{interactive && <script>
+  const stages = document.querySelectorAll<HTMLElement>('[data-kawaii-stage="true"]');
+  stages.forEach((stage) => {
+    const letters = stage.querySelectorAll<HTMLElement>('[data-kawaii-interactive="true"]');
+    const reset = () => letters.forEach((letter) => {
+      letter.style.setProperty('--pointer-x', '0');
+      letter.style.setProperty('--pointer-y', '0');
+    });
+    stage.addEventListener('pointermove', (event) => {
+      if (event.pointerType !== 'mouse') return;
+      letters.forEach((letter) => {
+        const r = letter.getBoundingClientRect();
+        const dx = Math.max(-1, Math.min(1, (event.clientX - (r.left + r.width / 2)) / 220));
+        const dy = Math.max(-1, Math.min(1, (event.clientY - (r.top + r.height / 2)) / 220));
+        letter.style.setProperty('--pointer-x', String(dx));
+        letter.style.setProperty('--pointer-y', String(dy));
+      });
+    });
+    stage.addEventListener('pointerleave', reset);
+  });
+</script>}
