@@ -1,38 +1,35 @@
 ---
-const BASE_URL = import.meta.env.BASE_URL;
+import { BASE_URL, siteUrl } from '../../lib/site';
 const navItems = [
   { href: '/', label: 'Inicio' },
   { href: '/shop', label: 'Tienda' },
   { href: '/customize', label: 'Personaliza' },
   { href: '/about', label: 'Sobre nosotros' },
 ];
-const currentPath = Astro.url.pathname.replace(BASE_URL, '/') || '/';
-const toUrl = (path: string) => `${BASE_URL}${path.replace(/^\//, '')}`;
+const basePath = BASE_URL.replace(/\/$/, '');
+const currentPath = Astro.url.pathname === basePath || Astro.url.pathname === `${basePath}/` ? '/' : Astro.url.pathname.replace(`${basePath}/`, '/');
 ---
 <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-crema/90 transition-[background-color,border-color,backdrop-filter] duration-300">
   <div class="mx-auto flex h-[68px] max-w-[1304px] items-center justify-between px-5 sm:px-6 lg:px-7">
-    <a href={toUrl('/')} class="michi-logo shrink-0" aria-label="Michi Pop, inicio">
+    <a href={siteUrl('/')} class="michi-logo shrink-0" aria-label="Michi Pop, inicio">
       <span class="michi-logo__m">M</span><span class="michi-logo__i">I</span><span class="michi-logo__c">C</span><span class="michi-logo__h">H</span><span class="michi-logo__i2">I</span><span class="michi-logo__pop">POP</span>
     </a>
-
     <nav class="hidden items-center gap-8 text-[11px] font-black uppercase tracking-[.17em] md:flex" aria-label="Principal">
       {navItems.map((item) => (
-        <a class:list={['relative py-2 transition-colors hover:text-tinta', currentPath === item.href ? 'after:absolute after:inset-x-0 after:-bottom-1 after:mx-auto after:h-0.5 after:w-5 after:rounded-full after:bg-rosa' : '']} href={toUrl(item.href)}>{item.label}</a>
+        <a class:list={['relative py-2 transition-colors hover:text-tinta', currentPath === item.href ? 'after:absolute after:inset-x-0 after:-bottom-1 after:mx-auto after:h-0.5 after:w-5 after:rounded-full after:bg-rosa' : '']} href={siteUrl(item.href)}>{item.label}</a>
       ))}
-      <a class="soft-button rounded-full border border-tinta px-4 py-2.5 whitespace-nowrap" href={toUrl('/shop#cart')}>Cesta (0)</a>
+      <a class="soft-button rounded-full border border-tinta px-4 py-2.5 whitespace-nowrap" href={siteUrl('/shop#cart')}>Cesta (0)</a>
     </nav>
-
     <button id="mobile-menu" class="grid h-10 w-10 place-items-center rounded-full border border-tinta md:hidden" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
       <span class="grid gap-1.5" aria-hidden="true"><i class="block h-px w-4 bg-tinta"></i><i class="block h-px w-4 bg-tinta"></i><i class="block h-px w-4 bg-tinta"></i></span>
     </button>
   </div>
-
   <nav id="mobile-nav" class="hidden border-t border-linea bg-crema px-5 pb-5 pt-2 md:hidden" aria-label="Principal móvil">
     <div class="grid gap-1 pt-1 text-sm font-black uppercase tracking-[.14em]">
       {navItems.map((item) => (
-        <a class={`rounded-xl px-3 py-3 ${currentPath === item.href ? 'bg-rosa/20' : 'hover:bg-white/60'}`} href={toUrl(item.href)}>{item.label}</a>
+        <a class={`rounded-xl px-3 py-3 ${currentPath === item.href ? 'bg-rosa/20' : 'hover:bg-white/60'}`} href={siteUrl(item.href)}>{item.label}</a>
       ))}
-      <a class="mt-1 rounded-full bg-tinta px-4 py-3 text-center text-crema" href={toUrl('/shop#cart')}>Cesta (0)</a>
+      <a class="mt-1 rounded-full bg-tinta px-4 py-3 text-center text-crema" href={siteUrl('/shop#cart')}>Cesta (0)</a>
     </div>
   </nav>
 </header>
