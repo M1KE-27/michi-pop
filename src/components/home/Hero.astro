@@ -2,6 +2,10 @@
 import KawaiiHeading from '../kawaii/KawaiiHeading.astro';
 import Heart from '../icons/Heart.astro';
 import Star from '../icons/Star.astro';
+
+const BASE_URL = import.meta.env.BASE_URL;
+const asset = (path: string) => `${BASE_URL}${path.replace(/^\//, '')}`;
+const url = (path: string) => `${BASE_URL}${path.replace(/^\//, '')}`;
 ---
 <section class="relative overflow-hidden px-5 pb-4 pt-20 sm:pb-6 lg:px-8 lg:pt-24">
   <div class="mx-auto grid max-w-[1304px] items-center gap-1 lg:grid-cols-[.96fr_1.04fr]">
@@ -24,14 +28,14 @@ import Star from '../icons/Star.astro';
       </div>
 
       <p class="mt-4 max-w-[33rem] text-sm leading-6 sm:text-base">Accesorios handmade en pequeño formato, con colores pastel y un poquito de caos bonito.</p>
-      <a href="/shop" class="soft-button mt-5 inline-flex items-center gap-3 rounded-full bg-tinta px-6 py-3.5 text-sm font-bold text-crema shadow-[0_7px_0_rgba(48,44,43,.14)]">
+      <a href={url('/shop')} class="soft-button mt-5 inline-flex items-center gap-3 rounded-full bg-tinta px-6 py-3.5 text-sm font-bold text-crema shadow-[0_7px_0_rgba(48,44,43,.14)]">
         Descubre la colección <span aria-hidden="true">→</span>
       </a>
     </div>
 
     <div class="relative min-h-[21rem] sm:min-h-[27rem] lg:min-h-[31rem]">
       <img
-        src="/brand/hero-maker.webp"
+        src={asset('/brand/hero-maker.webp')}
         alt="Ilustración de una joven emprendedora creando accesorios con cuentas de colores"
         width="996"
         height="629"
@@ -40,7 +44,7 @@ import Star from '../icons/Star.astro';
         class="hero-art pointer-events-none absolute bottom-0 right-[-1%] h-auto w-[108%] max-w-[820px] object-contain"
       />
       <img
-        src="/brand/pequenas-ideas-grandes-suenos.webp"
+        src={asset('/brand/pequenas-ideas-grandes-suenos.webp')}
         alt="Pequeñas ideas, grandes sueños"
         width="482"
         height="209"
