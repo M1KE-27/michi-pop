@@ -15,7 +15,7 @@ export const products: Product[] = [
   {
     slug: 'llavero-bubble-dog',
     name: 'Bubble Dog',
-    price: 18,
+    price: 2,
     category: 'llaveros',
     colors: ['rosa', 'menta', 'lila'],
     available: true,
@@ -25,7 +25,7 @@ export const products: Product[] = [
   {
     slug: 'llavero-love',
     name: 'Love Charm',
-    price: 16,
+    price: 2,
     category: 'llaveros',
     colors: ['rosa', 'amarillo'],
     available: true,
@@ -35,7 +35,7 @@ export const products: Product[] = [
   {
     slug: 'collar-candy',
     name: 'Candy Collar',
-    price: 24,
+    price: 2,
     category: 'collares',
     colors: ['rosa', 'lila', 'azul'],
     available: true,
@@ -45,7 +45,7 @@ export const products: Product[] = [
   {
     slug: 'collar-mint-heart',
     name: 'Mint Heart',
-    price: 22,
+    price: 2,
     category: 'collares',
     colors: ['menta', 'amarillo'],
     available: false,
@@ -55,7 +55,7 @@ export const products: Product[] = [
   {
     slug: 'charm-flower-party',
     name: 'Flower Party',
-    price: 14,
+    price: 2,
     category: 'accesorios',
     colors: ['amarillo', 'rosa', 'lima'],
     available: true,
@@ -65,7 +65,7 @@ export const products: Product[] = [
   {
     slug: 'clip-candy',
     name: 'Candy Clip',
-    price: 12,
+    price: 2,
     category: 'accesorios',
     colors: ['lila', 'naranja', 'azul'],
     available: true,
