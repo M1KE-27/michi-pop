@@ -2,25 +2,23 @@
 import { products } from '../../data/products';
 import ProductCard from '../shop/ProductCard.astro';
 import RevealOnScroll from '../motion/RevealOnScroll';
-
-const featured = products;
 ---
-<section id="pop-del-dia" class="px-5 py-24 lg:px-8">
+<section id="collection" class="px-5 pb-8 pt-1 lg:px-8">
   <div class="mx-auto max-w-7xl">
-    <RevealOnScroll variant="side">
-      <div class="mb-10 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-        <div>
-          <p class="text-xs font-bold uppercase tracking-[.22em]">La colección actual</p>
-          <h2 class="display-font mt-3 text-5xl font-black tracking-[-.07em] md:text-7xl">Los seis pops.</h2>
-          <p class="mt-4 max-w-xl text-sm leading-6 text-tinta/75">Seis piezas, seis excusas para llevar un poco de color encima. Todas a 2,00 € en este prototipo.</p>
+    <RevealOnScroll client:load variant="side">
+      <div class="mb-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="h-3 w-3 rounded-full bg-rosa"></span>
+          <p class="text-[10px] font-black uppercase tracking-[.2em]">Nuestra colección</p>
         </div>
-        <a class="soft-button rounded-full border border-tinta px-5 py-3 text-sm font-bold" href="/shop">Ver catálogo completo →</a>
+        <a class="text-xs font-medium" href="/shop">Ver todos <span aria-hidden="true">→</span></a>
       </div>
     </RevealOnScroll>
-    <div class="grid gap-x-5 gap-y-14 sm:grid-cols-2 lg:grid-cols-3">
-      {featured.map((product, index) => (
-        <RevealOnScroll client:load variant={index % 3 === 0 ? 'rise' : index % 3 === 1 ? 'tilt' : 'scale'} class={index % 2 ? 'lg:translate-y-8' : ''}>
-          <ProductCard product={product} />
+
+    <div class="grid grid-cols-2 gap-x-3 gap-y-8 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-3">
+      {products.map((product, index) => (
+        <RevealOnScroll client:load variant={index % 2 === 0 ? 'rise' : 'tilt'}>
+          <ProductCard product={product} compact />
         </RevealOnScroll>
       ))}
     </div>
