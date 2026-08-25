@@ -6,8 +6,12 @@ const navItems = [
   { href: '/customize', label: 'Personaliza' },
   { href: '/about', label: 'Sobre nosotros' },
 ];
-const basePath = BASE_URL.replace(/\/$/, '');
-const currentPath = Astro.url.pathname === basePath || Astro.url.pathname === `${basePath}/` ? '/' : Astro.url.pathname.replace(`${basePath}/`, '/');
+
+const basePath = BASE_URL.replace(/\/+$/, '');
+const pathname = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const currentPath = basePath && pathname.startsWith(basePath)
+  ? (pathname.slice(basePath.length).replace(/\/+$/, '') || '/')
+  : pathname;
 ---
 <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-crema/90 transition-[background-color,border-color,backdrop-filter] duration-300">
   <div class="mx-auto flex h-[68px] max-w-[1304px] items-center justify-between px-5 sm:px-6 lg:px-7">
@@ -21,11 +25,12 @@ const currentPath = Astro.url.pathname === basePath || Astro.url.pathname === `$
       <span class="michi-logo__letter michi-logo__popletter michi-logo__popletter--o">O</span>
       <span class="michi-logo__letter michi-logo__popletter michi-logo__popletter--p">P</span>
     </a>
-    <nav class="hidden items-center gap-8 text-[11px] font-black uppercase tracking-[.17em] md:flex" aria-label="Principal">
+    <nav class="hidden items-center gap-5 text-[11px] font-black uppercase tracking-[.17em] md:flex" aria-label="Principal">
       {navItems.map((item) => (
         <a
-          class:list={['nav-pill relative py-2 px-3 transition-all duration-200', currentPath === item.href ? 'nav-pill--active' : '']}
+          class:list={['nav-pill relative px-3.5 py-2 transition-[background-color,color,transform,box-shadow] duration-200', currentPath === item.href ? 'nav-pill--active' : '']}
           href={siteUrl(item.href)}
+          aria-current={currentPath === item.href ? 'page' : undefined}
         >
           <span>{item.label}</span>
         </a>
@@ -39,7 +44,11 @@ const currentPath = Astro.url.pathname === basePath || Astro.url.pathname === `$
   <nav id="mobile-nav" class="hidden border-t border-linea bg-crema px-5 pb-5 pt-2 md:hidden" aria-label="Principal móvil">
     <div class="grid gap-1 pt-1 text-sm font-black uppercase tracking-[.14em]">
       {navItems.map((item) => (
-        <a class={`rounded-xl px-3 py-3 ${currentPath === item.href ? 'bg-rosa/20' : 'hover:bg-white/60'}`} href={siteUrl(item.href)}>{item.label}</a>
+        <a
+          class={`rounded-xl px-3 py-3 ${currentPath === item.href ? 'bg-rosa text-tinta shadow-[inset_0_1px_0_rgba(255,255,255,.58)]' : 'hover:bg-white/60'}`}
+          href={siteUrl(item.href)}
+          aria-current={currentPath === item.href ? 'page' : undefined}
+        >{item.label}</a>
       ))}
       <a class="mt-1 rounded-full bg-tinta px-4 py-3 text-center text-crema" href={siteUrl('/shop#cart')}>Cesta (0)</a>
     </div>
