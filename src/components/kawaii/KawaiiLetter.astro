@@ -5,9 +5,10 @@ interface Props {
   rotate?: number;
   scale?: number;
   size?: 'sm' | 'md' | 'lg' | 'xl';
+  interactive?: boolean;
 }
 
-const { char, color, rotate = 0, scale = 1, size = 'lg' } = Astro.props;
+const { char, color, rotate = 0, scale = 1, size = 'lg', interactive = true } = Astro.props;
 
 const gradients = {
   rosa: 'linear-gradient(150deg, #F7A8C4 5%, #EE8FAF 62%, #D7779A 100%)',
@@ -37,7 +38,8 @@ const fontSize = {
 }[size];
 ---
 <span
-  class="kawaii-letter display-font"
+  class={`kawaii-letter display-font ${interactive ? 'kawaii-interactive' : ''}`}
+  data-kawaii-interactive={interactive ? 'true' : undefined}
   style={`--letter-gradient:${gradients[color]};--letter-shadow:${shadows[color]};--rotate:${rotate}deg;--scale:${scale};font-size:${fontSize};`}
   aria-hidden="true"
 >{char}</span>
