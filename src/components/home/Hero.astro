@@ -15,7 +15,7 @@ import Star from '../icons/Star.astro';
         text="PEQUEÑOS DETALLES"
         colors={['rosa','amarillo','lila','menta','naranja','azul','lima','rosa','amarillo','lila','menta','azul','rosa','amarillo','lila','menta']}
         size="lg"
-        class="justify-start [&_h1]:justify-start"
+        class="justify-start [&_h1]:justify-start [&_h1]:max-w-[690px]"
       />
 
       <div class="mt-3 flex items-end gap-3">
@@ -29,17 +29,69 @@ import Star from '../icons/Star.astro';
       </a>
     </div>
 
-    <div class="relative min-h-[25rem] overflow-hidden sm:min-h-[32rem] lg:min-h-[37rem]">
-      <img
-        src="/hero-maker.webp"
-        alt="Ilustración de una joven emprendedora creando accesorios con cuentas de colores"
-        width="900"
-        height="720"
-        fetchpriority="high"
-        decoding="async"
-        class="absolute inset-0 h-full w-full object-contain object-bottom mix-blend-multiply"
-      />
-      <div class="absolute left-[13%] top-[19%] rotate-[-12deg]"><Heart size={35} fill="#EE8FAF" /></div>
+    <div class="relative min-h-[25rem] sm:min-h-[32rem] lg:min-h-[37rem]" aria-label="Ilustración de una joven emprendedora creando accesorios con cuentas de colores">
+      <svg viewBox="0 0 760 610" class="absolute inset-0 h-full w-full" role="img" aria-labelledby="maker-title maker-desc">
+        <title id="maker-title">Joven emprendedora creando accesorios</title>
+        <desc id="maker-desc">Ilustración editorial de una joven montando un accesorio con cuentas de colores sobre una mesa de trabajo.</desc>
+        <g fill="none" stroke="#292329" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M95 516c102 6 214 10 332 5 91-4 162-9 243-6" stroke-width="4"/>
+          <path d="M630 520l43-53 57 4-41 54" stroke-width="4"/>
+          <path d="M635 469l57-1 43 53" stroke-width="4"/>
+          <path d="M111 522c25-18 47-23 73-18" stroke-width="3"/>
+          <path d="M624 491c-31-18-58-21-90-12" stroke-width="3"/>
+
+          <path d="M366 145c-4-35 7-72 37-95 26-21 62-26 91-8 29 18 48 55 43 88-3 21-13 37-30 52" stroke-width="5"/>
+          <path d="M380 105c10-33 46-51 75-50 40 2 60 27 69 55" stroke-width="10"/>
+          <path d="M373 112c3-23 20-43 40-52" stroke="#4B3328" stroke-width="17"/>
+          <path d="M408 54c27-18 67-25 96-6" stroke="#4B3328" stroke-width="18"/>
+          <path d="M491 58c23 12 35 28 36 51" stroke="#4B3328" stroke-width="18"/>
+          <path d="M515 85c19 8 25 28 16 44-7 12-22 17-37 18" stroke-width="3"/>
+          <path d="M458 126c5-3 10-3 15 0" stroke-width="3"/>
+          <path d="M475 157c-11 5-22 3-30-6" stroke-width="3"/>
+          <circle cx="479" cy="118" r="4" fill="#292329" stroke="none"/>
+          <path d="M444 83c-11 2-17 6-22 13M504 87c8 2 13 5 18 12" stroke-width="3"/>
+
+          <path d="M401 171c-25 9-44 25-53 49-13 33-11 65 12 91 18 20 43 27 72 29" stroke-width="4"/>
+          <path d="M511 172c31 6 55 23 65 47 11 26 9 59-3 88-11 25-29 38-57 42" stroke-width="4"/>
+          <path d="M404 172c32 11 70 13 107 0" stroke-width="5"/>
+          <path d="M397 170c-7 67 0 126 23 176" stroke="#EE8FAF" stroke-width="7"/>
+          <path d="M511 174c-7 63-7 117 6 179" stroke="#EE8FAF" stroke-width="7"/>
+          <path d="M418 232c21 16 54 18 78 4" stroke-width="3"/>
+
+          <path d="M420 318c24 27 42 39 66 47 26 9 50 28 68 51" stroke-width="18" stroke="#F0A77B"/>
+          <path d="M548 415c24 17 37 26 59 34" stroke-width="18" stroke="#F0A77B"/>
+          <path d="M589 449c16 9 29 4 39-5 8-7 17-8 25 0" stroke-width="4"/>
+          <path d="M492 362c17-22 32-29 49-22 16 6 22 21 19 34-4 15-20 24-35 21-13-3-22-13-27-33" stroke-width="3"/>
+
+          <path d="M419 327c-27 20-52 43-72 71-14 20-28 29-43 35" stroke-width="18" stroke="#F0A77B"/>
+          <path d="M304 433c-20 7-39 12-53 7-13-5-18-17-13-27 5-12 18-15 30-9" stroke-width="4"/>
+          <path d="M243 404c-10 8-15 17-12 26" stroke-width="4"/>
+
+          <path d="M402 455c-17 24-31 42-44 65" stroke="#292329" stroke-width="15"/>
+          <path d="M509 457c-2 27 8 49 24 68" stroke="#292329" stroke-width="15"/>
+          <path d="M356 520c-18 4-33 10-42 18" stroke="#292329" stroke-width="5"/>
+          <path d="M535 525c17 2 31 9 41 18" stroke="#292329" stroke-width="5"/>
+        </g>
+
+        <g stroke="#292329" stroke-width="2">
+          <circle cx="150" cy="511" r="11" fill="#EE8FAF"/><circle cx="180" cy="522" r="10" fill="#F7D24A"/>
+          <circle cx="207" cy="505" r="12" fill="#B49BD5"/><circle cx="236" cy="522" r="10" fill="#8CCEBE"/>
+          <circle cx="267" cy="509" r="11" fill="#F49A3B"/><circle cx="296" cy="523" r="9" fill="#8EC7E4"/>
+          <circle cx="326" cy="510" r="11" fill="#B8CE55"/><circle cx="352" cy="524" r="9" fill="#EE8FAF"/>
+          <circle cx="386" cy="513" r="10" fill="#F7D24A"/><circle cx="418" cy="522" r="12" fill="#8EC7E4"/>
+          <circle cx="450" cy="510" r="9" fill="#B49BD5"/><circle cx="480" cy="523" r="11" fill="#8CCEBE"/>
+          <circle cx="515" cy="511" r="10" fill="#F49A3B"/><circle cx="544" cy="522" r="11" fill="#EE8FAF"/>
+          <circle cx="573" cy="511" r="9" fill="#F7D24A"/>
+        </g>
+
+        <g fill="none" stroke="#292329" stroke-width="3" stroke-linecap="round">
+          <path d="M99 141l11 6M105 130l2 12"/><path d="M626 173l12-6M635 184l-2-12"/>
+          <path d="M150 214c9-15 20-17 32-6 12 11 10 27-5 34-15 7-27-5-27-28Z" fill="#EE8FAF"/>
+          <path d="M661 284l12-9M671 296l11-3"/>
+        </g>
+      </svg>
+
+      <div class="absolute left-[12%] top-[19%] rotate-[-12deg]"><Heart size={35} fill="#EE8FAF" /></div>
       <div class="absolute left-[4%] bottom-[20%] rotate-[-8deg]"><Star size={38} /></div>
       <div class="absolute right-[7%] top-[24%] max-w-[180px] brand-hand text-2xl leading-tight sm:text-3xl">
         Pequeñas ideas,<br />grandes <span class="underline decoration-rosa decoration-4 underline-offset-4">sueños.</span>
