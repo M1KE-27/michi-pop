@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, type ReactNode } from 'react';
 import { animate, inView } from 'motion';
 
 interface RevealOnScrollProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   variant?: 'rise' | 'side' | 'scale' | 'tilt';
 }
