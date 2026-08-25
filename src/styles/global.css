@@ -62,19 +62,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .michi-logo__c { background: linear-gradient(#ccb8e6, var(--lila)); }
 .michi-logo__h { background: linear-gradient(#a4dfc9, var(--menta)); }
 .michi-logo__i2 { background: linear-gradient(#ffb6c6, var(--rosa)); }
-.michi-logo__pop {
-  margin-left: .18rem;
-  color: var(--azul);
-  letter-spacing: -.085em;
-  text-shadow: 0 1px 0 rgba(255,255,255,.75);
-  transition: transform .22s ease, color .22s ease;
-}
+.michi-logo__popletter { background: linear-gradient(#b7e0f1, var(--azul)); }
+.michi-logo__popletter--o { background: linear-gradient(#a6d9c8, var(--menta)); }
+.michi-logo__popletter--p { background: linear-gradient(#b7e0f1, var(--azul)); }
 .michi-logo:hover .michi-logo__letter:nth-child(1) { transform: translateY(-2px) rotate(-4deg); }
 .michi-logo:hover .michi-logo__letter:nth-child(2) { transform: translateY(-3px) rotate(3deg); }
 .michi-logo:hover .michi-logo__letter:nth-child(3) { transform: translateY(-2px) rotate(-2deg); }
 .michi-logo:hover .michi-logo__letter:nth-child(4) { transform: translateY(-3px) rotate(2deg); }
 .michi-logo:hover .michi-logo__letter:nth-child(5) { transform: translateY(-2px) rotate(-3deg); }
-.michi-logo:hover .michi-logo__pop { transform: translateX(2px); color: var(--menta); }
+.michi-logo:hover .michi-logo__letter:nth-child(6) { transform: translateY(-3px) rotate(2deg); }
+.michi-logo:hover .michi-logo__letter:nth-child(7) { transform: translateY(-2px) rotate(-2deg); }
+.michi-logo:hover .michi-logo__letter:nth-child(8) { transform: translateY(-3px) rotate(3deg); }
 
 .kawaii-stage { perspective: 950px; }
 .kawaii-letter {
@@ -165,6 +163,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 @media (max-width: 767px) {
   .michi-logo { font-size: .96rem; }
+  .miche-logo--footer { font-size: 1.05rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
