@@ -1,6 +1,5 @@
 ---
 import type { Product } from '../../data/products';
-import Heart from '../icons/Heart.astro';
 
 interface Props { product: Product; compact?: boolean; }
 const { product, compact = false } = Astro.props;
@@ -8,35 +7,30 @@ const colorClass: Record<string, string> = {
   rosa: 'bg-rosa', amarillo: 'bg-amarillo', lila: 'bg-lila', menta: 'bg-menta', naranja: 'bg-naranja', lima: 'bg-lima', azul: 'bg-azul',
 };
 ---
-<article class={`group relative ${compact ? '' : 'border-t border-linea pt-4'}`}>
+<article class={`group ${compact ? '' : 'border-t border-linea pt-4'}`}>
   <a href={`/product/${product.slug}`} class="block">
-    <div class="relative overflow-hidden rounded-[2rem] border border-linea bg-white/60 p-3 transition-[transform,box-shadow] duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_18px_42px_rgba(73,47,61,.10)]">
-      <div class="absolute right-5 top-5 z-10 rounded-full border border-linea bg-crema/90 p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"><Heart size={19} fill="#F7D24A" /></div>
-      <div class="overflow-hidden rounded-[1.5rem] bg-[#F8EEE7]">
-        <img
-          src={`/products/${product.image}.jpg`}
-          alt={`${product.name}, ${product.category} handmade de Michi Pop`}
-          width="600"
-          height="600"
-          loading={compact ? 'eager' : 'lazy'}
-          decoding="async"
-          class="aspect-square w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.035]"
-        />
-      </div>
+    <div class="relative overflow-hidden rounded-[1.15rem] bg-[#F8EEE7] transition-transform duration-300 group-hover:-translate-y-1">
+      <img
+        src={`/products/${product.image}.webp`}
+        alt={`${product.name}, ${product.category} handmade de Michi Pop`}
+        width="400"
+        height="400"
+        loading={compact ? 'eager' : 'lazy'}
+        decoding="async"
+        class="aspect-square w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.035]"
+      />
+      <span class="pointer-events-none absolute inset-x-3 bottom-3 flex justify-end opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+        <span class="rounded-full border border-tinta bg-crema/95 px-3 py-1.5 text-[10px] font-black uppercase tracking-[.14em]">Ver pieza</span>
+      </span>
     </div>
-    <div class="mt-4 flex items-start justify-between gap-4">
-      <div>
-        <p class="text-[10px] font-bold uppercase tracking-[.18em] text-tinta/65">{product.category}</p>
-        <h3 class="display-font mt-1 text-2xl font-extrabold tracking-[-.04em]">{product.name}</h3>
-        <div class="mt-2 flex gap-1.5" aria-label={`Colores: ${product.colors.join(', ')}`}>
-          {product.colors.map((color) => <span class={`h-3 w-3 rounded-full border border-tinta/10 ${colorClass[color]}`}></span>)}
+    <div class="mt-3 flex items-start justify-between gap-3">
+      <div class="min-w-0">
+        <h3 class="display-font truncate text-base font-extrabold tracking-[-.025em] sm:text-lg">{product.name}</h3>
+        <div class="mt-1.5 flex gap-1.5" aria-label={`Colores: ${product.colors.join(', ')}`}>
+          {product.colors.map((color) => <span class={`h-2.5 w-2.5 rounded-full border border-tinta/10 ${colorClass[color]}`}></span>)}
         </div>
       </div>
-      <span class="whitespace-nowrap pt-1 font-semibold">{product.price.toFixed(2).replace('.', ',')} €</span>
-    </div>
-    <div class="mt-3 flex items-center justify-between text-xs uppercase tracking-[.14em]">
-      <span class={product.available ? 'text-tinta' : 'text-tinta/50'}>{product.available ? 'Disponible' : 'Agotado'}</span>
-      <span class="soft-button rounded-full border border-tinta px-3 py-1.5">Ver pieza</span>
+      <span class="whitespace-nowrap pt-0.5 text-sm font-semibold">{product.price.toFixed(2).replace('.', ',')} €</span>
     </div>
   </a>
 </article>
