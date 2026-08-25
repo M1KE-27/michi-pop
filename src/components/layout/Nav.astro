@@ -12,13 +12,20 @@ const currentPath = Astro.url.pathname === basePath || Astro.url.pathname === `$
 <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-crema/90 transition-[background-color,border-color,backdrop-filter] duration-300">
   <div class="mx-auto flex h-[68px] max-w-[1304px] items-center justify-between px-5 sm:px-6 lg:px-7">
     <a href={siteUrl('/')} class="michi-logo shrink-0" aria-label="Michi Pop, inicio">
-      <span class="michi-logo__letter michi-logo__m">M</span><span class="michi-logo__letter michi-logo__i">I</span><span class="michi-logo__letter michi-logo__c">C</span><span class="michi-logo__letter michi-logo__h">H</span><span class="michi-logo__letter michi-logo__i2">I</span><span class="michi-logo__pop">POP</span>
+      <span class="michi-logo__letter michi-logo__m">M</span>
+      <span class="michi-logo__letter michi-logo__i">I</span>
+      <span class="michi-logo__letter michi-logo__c">C</span>
+      <span class="michi-logo__letter michi-logo__h">H</span>
+      <span class="michi-logo__letter michi-logo__i2">I</span>
+      <span class="michi-logo__letter michi-logo__popletter">P</span>
+      <span class="michi-logo__letter michi-logo__popletter michi-logo__popletter--o">O</span>
+      <span class="michi-logo__letter michi-logo__popletter michi-logo__popletter--p">P</span>
     </a>
     <nav class="hidden items-center gap-8 text-[11px] font-black uppercase tracking-[.17em] md:flex" aria-label="Principal">
       {navItems.map((item) => (
         <a class:list={['relative py-2 transition-colors hover:text-tinta', currentPath === item.href ? 'after:absolute after:inset-x-0 after:-bottom-1 after:mx-auto after:h-0.5 after:w-5 after:rounded-full after:bg-rosa' : '']} href={siteUrl(item.href)}>{item.label}</a>
       ))}
-      <a class="soft-button rounded-full border border-tinta px-4 py-2.5 whitespace-nowrap" href={siteUrl('/shop#cart')}>Cesta (0)</a>
+      <a class="soft-button whitespace-nowrap rounded-full border border-tinta px-4 py-2.5" href={siteUrl('/shop#cart')}>Cesta (0)</a>
     </nav>
     <button id="mobile-menu" class="grid h-10 w-10 place-items-center rounded-full border border-tinta md:hidden" aria-expanded="false" aria-controls="mobile-nav" aria-label="Abrir menú">
       <span class="grid gap-1.5" aria-hidden="true"><i class="block h-px w-4 bg-tinta"></i><i class="block h-px w-4 bg-tinta"></i><i class="block h-px w-4 bg-tinta"></i></span>
