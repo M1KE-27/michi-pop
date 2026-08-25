@@ -7,16 +7,19 @@ interface Props {
 }
 
 const { title, description = 'Accesorios handmade kawaii hechos con amor.' } = Astro.props;
+const BASE_URL = (import.meta.env.BASE_URL || '/').replace(/\/?$/, '/');
+const asset = (path: string) => `${BASE_URL}${path.replace(/^\//, '')}`;
 ---
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <meta name="theme-color" content="#FAF6EF" />
-    <link rel="icon" href="/michi-pop/favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="/michi-pop/favicon.svg" />
+    <link rel="icon" href={asset('/favicon.svg')} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={asset('/favicon.svg')} />
+    <link rel="manifest" href={asset('/site.webmanifest')} />
     <title>{title} · Michi Pop</title>
   </head>
   <body>
