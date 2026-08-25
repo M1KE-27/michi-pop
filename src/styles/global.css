@@ -74,6 +74,29 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .michi-logo:hover .michi-logo__letter:nth-child(7) { transform: translateY(-2px) rotate(-2deg); }
 .michi-logo:hover .michi-logo__letter:nth-child(8) { transform: translateY(-3px) rotate(3deg); }
 
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
+  border-radius: 999px;
+}
+.nav-pill:hover { background: rgba(255,255,255,.6); }
+.nav-pill--active {
+  background: var(--rosa);
+  color: var(--tinta);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.58), 0 5px 12px rgba(244,137,160,.16);
+}
+.nav-pill--active::after {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border: 1px solid rgba(48,44,43,.08);
+  border-radius: inherit;
+  pointer-events: none;
+}
+.nav-pill--active span { position: relative; z-index: 1; }
+
 .kawaii-stage { perspective: 950px; }
 .kawaii-letter {
   --pointer-x: 0;
@@ -164,6 +187,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 @media (max-width: 767px) {
   .michi-logo { font-size: .96rem; }
   .miche-logo--footer { font-size: 1.05rem; }
+  .nav-pill { min-height: 34px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
