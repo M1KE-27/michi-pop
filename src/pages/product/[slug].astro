@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Nav from '../../components/layout/Nav.astro';
+import Footer from '../../components/layout/Footer.astro';
+import Heart from '../../components/icons/Heart.astro';
+import Star from '../../components/icons/Star.astro';
+import { products } from '../../data/products';
+
+export function getStaticPaths() {
+  return products.map((product) => ({ params: { slug: product.slug }, props: { product } }));
+}
+
+const { product } = Astro.props;
+const colorClass: Record<string, string> = {
+  rosa: 'bg-rosa', amarillo: 'bg-amarillo', lila: 'bg-lila', menta: 'bg-menta', naranja: 'bg-naranja', lima: 'bg-lima', azul: 'bg-azul',
+};
+---
+<BaseLayout title={product.name} description={product.description}>
+  <Nav />
+  <main class="px-5 pb-24 pt-36 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <a href="/shop" class="text-xs font-bold uppercase tracking-[.18em] hover:underline">← Volver a la tienda</a>
+      <div class="mt-8 grid items-center gap-12 lg:grid-cols-[1.05fr_.95fr]">
+        <div class="relative grid min-h-[30rem] place-items-center overflow-hidden rounded-[3rem_1.5rem_3rem_2rem] border border-tinta bg-crema">
+          <div class="absolute left-10 top-10 rotate-[-9deg]"><Star size={43} /></div>
+          <div class="absolute right-10 top-16 rotate-[12deg]"><Heart size={50} fill="#EE8FAF" /></div>
+          {product.image === 'bubble-dog' && <div class="relative text-9xl">●<span class="absolute left-24 top-16 text-6xl">●</span><span class="absolute left-36 top-10 text-5xl">●</span></div>}
+          {product.image === 'love-charm' && <div class="display-font text-[7rem] font-black text-rosa">LOVE</div>}
+          {product.image === 'candy-collar' && <div class="flex max-w-xs flex-wrap justify-center gap-3">{['rosa','azul','lila','amarillo','menta','rosa','azul','lila','amarillo','rosa'].map((c) => <span class={`h-11 w-11 rounded-full border border-tinta/10 ${colorClass[c]}`}></span>)}</div>}
+          {product.image === 'mint-heart' && <div class="display-font text-[11rem] text-menta">♥</div>}
+          {product.image === 'flower-party' && <div class="display-font text-[11rem] text-amarillo">✽</div>}
+          {product.image === 'candy-clip' && <div class="h-48 w-28 rounded-[2.7rem] border-[14px] border-lila rotate-12"></div>}
+        </div>
+
+        <div class="max-w-xl">
+          <p class="text-xs font-bold uppercase tracking-[.22em]">{product.category}</p>
+          <h1 class="display-font mt-3 text-6xl font-black tracking-[-.08em] md:text-8xl">{product.name}</h1>
+          <p class="mt-6 text-2xl font-semibold">{product.price.toFixed(2).replace('.', ',')} €</p>
+          <p class="mt-6 text-base leading-7">{product.description}</p>
+          <div class="mt-7">
+            <p class="text-xs font-bold uppercase tracking-[.18em]">Colores</p>
+            <div class="mt-3 flex gap-2">
+              {product.colors.map((color) => <span class={`h-8 w-8 rounded-full border border-tinta/15 ${colorClass[color]}`} title={color}></span>)}
+            </div>
+          </div>
+          <div class="mt-9 flex items-center gap-4">
+            <span class={`rounded-full border border-tinta px-4 py-2 text-xs font-bold uppercase tracking-[.14em] ${product.available ? '' : 'opacity-50'}`}>{product.available ? 'Disponible' : 'Agotado'}</span>
+            <button disabled class="soft-button cursor-not-allowed rounded-full bg-tinta px-6 py-3 text-sm font-bold text-crema opacity-55">Añadir a la cesta</button>
+          </div>
+          <p class="mt-5 text-xs leading-5 text-tinta/70">El prototipo no procesa pagos ni mantiene una cesta real todavía.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
