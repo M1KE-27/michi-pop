@@ -1,26 +1,19 @@
 ---
 import { products } from '../../data/products';
 import ProductCard from '../shop/ProductCard.astro';
-import RevealOnScroll from '../motion/RevealOnScroll';
 ---
-<section id="collection" class="px-5 pb-8 pt-1 lg:px-8">
-  <div class="mx-auto max-w-7xl">
-    <RevealOnScroll client:load variant="side">
-      <div class="mb-4 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-          <span class="h-3 w-3 rounded-full bg-rosa"></span>
-          <p class="text-[10px] font-black uppercase tracking-[.2em]">Nuestra colección</p>
-        </div>
-        <a class="text-xs font-medium" href="/shop">Ver todos <span aria-hidden="true">→</span></a>
+<section id="collection" class="px-5 pb-8 pt-1 lg:px-8 lg:pb-9">
+  <div class="mx-auto max-w-[1304px]">
+    <div class="mb-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <span class="h-3 w-3 rounded-full bg-rosa"></span>
+        <p class="text-[10px] font-black uppercase tracking-[.2em]">Nuestra colección</p>
       </div>
-    </RevealOnScroll>
+      <a class="text-xs font-medium" href="/shop">Ver todos <span aria-hidden="true">→</span></a>
+    </div>
 
     <div class="grid grid-cols-2 gap-x-3 gap-y-8 sm:grid-cols-3 lg:grid-cols-6 lg:gap-x-3">
-      {products.map((product, index) => (
-        <RevealOnScroll client:load variant={index % 2 === 0 ? 'rise' : 'tilt'}>
-          <ProductCard product={product} compact />
-        </RevealOnScroll>
-      ))}
+      {products.map((product) => <ProductCard product={product} compact />)}
     </div>
   </div>
 </section>
