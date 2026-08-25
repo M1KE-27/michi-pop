@@ -1,0 +1,18 @@
+---
+interface Props { size?: number; fill?: string; }
+const { size = 74, fill = '#EE8FAF' } = Astro.props;
+---
+<svg width={size} height={size} viewBox="0 0 96 72" aria-hidden="true">
+  <g fill={fill} stroke="#8b566d" stroke-width="1.6" stroke-linejoin="round">
+    <ellipse cx="18" cy="39" rx="10" ry="20" transform="rotate(-34 18 39)" />
+    <ellipse cx="31" cy="22" rx="12" ry="8" transform="rotate(-12 31 22)" />
+    <ellipse cx="49" cy="18" rx="10" ry="8" transform="rotate(14 49 18)" />
+    <circle cx="66" cy="21" r="13" />
+    <ellipse cx="80" cy="31" rx="8" ry="6" transform="rotate(20 80 31)" />
+    <ellipse cx="62" cy="43" rx="11" ry="8" transform="rotate(-18 62 43)" />
+    <ellipse cx="46" cy="54" rx="11" ry="8" transform="rotate(18 46 54)" />
+    <ellipse cx="27" cy="52" rx="11" ry="8" transform="rotate(-20 27 52)" />
+    <path d="M75 43c8 4 12 12 13 22" fill="none" stroke-linecap="round" />
+  </g>
+  <circle cx="69" cy="20" r="1.8" fill="#292329" stroke="none" />
+</svg>
