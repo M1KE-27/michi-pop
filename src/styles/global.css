@@ -35,7 +35,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .brand-hand { font-family: 'Comic Sans MS', 'Bradley Hand', cursive; }
 .accent-font { font-family: 'Caveat', cursive; }
 
-.kawaii-stage { perspective: 900px; }
+.kawaii-stage { perspective: 950px; }
 .kawaii-letter {
   --pointer-x: 0;
   --pointer-y: 0;
@@ -70,11 +70,20 @@ button, a { -webkit-tap-highlight-color: transparent; }
   pointer-events: none;
 }
 
+.hero-art,
+.hero-note {
+  mix-blend-mode: multiply;
+}
+
 .soft-button { transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease; }
 .soft-button:hover { transform: translateY(-2px) scale(1.015); }
 .soft-button:active { transform: translateY(1px) scale(.985); }
 
 .nav-solid { background: rgba(250,246,239,.92); backdrop-filter: blur(16px); border-bottom-color: rgba(228,222,215,.95); }
+
+@media (max-width: 1023px) {
+  .hero-art { mix-blend-mode: multiply; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
