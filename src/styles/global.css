@@ -121,9 +121,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .flower-stage:hover .flower-art { filter: drop-shadow(0 14px 26px rgba(48,44,43,.09)); }
 
+.home-reveal,
 .about-reveal {
   opacity: 0;
-  animation: aboutReveal .62s cubic-bezier(.22,1,.36,1) forwards;
+  animation: revealUp .62s cubic-bezier(.22,1,.36,1) forwards;
   will-change: opacity, transform;
 }
 .about-board { animation: aboutFloat 7s ease-in-out infinite; }
@@ -145,7 +146,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .nav-solid { background: rgba(250,246,239,.92); backdrop-filter: blur(16px); border-bottom-color: rgba(228,222,215,.95); }
 
-@keyframes aboutReveal {
+@keyframes revealUp {
   from { opacity: 0; transform: translate3d(0, 18px, 0); }
   to { opacity: 1; transform: translate3d(0, 0, 0); }
 }
@@ -170,5 +171,5 @@ button, a { -webkit-tap-highlight-color: transparent; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
   .kawaii-letter { transform: rotate(var(--rotate)) scale(var(--scale)); }
-  .flower-art, .about-flower, .about-board, .about-reveal { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .flower-art, .about-flower, .about-board, .about-reveal, .home-reveal { animation: none !important; opacity: 1 !important; transform: none !important; }
 }
