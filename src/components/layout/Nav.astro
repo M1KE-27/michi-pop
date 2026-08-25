@@ -12,7 +12,7 @@ const currentPath = Astro.url.pathname === basePath || Astro.url.pathname === `$
 <header id="site-nav" class="fixed inset-x-0 top-0 z-50 border-b border-transparent bg-crema/90 transition-[background-color,border-color,backdrop-filter] duration-300">
   <div class="mx-auto flex h-[68px] max-w-[1304px] items-center justify-between px-5 sm:px-6 lg:px-7">
     <a href={siteUrl('/')} class="michi-logo shrink-0" aria-label="Michi Pop, inicio">
-      <span class="michi-logo__m">M</span><span class="michi-logo__i">I</span><span class="michi-logo__c">C</span><span class="michi-logo__h">H</span><span class="michi-logo__i2">I</span><span class="michi-logo__pop">POP</span>
+      <span class="michi-logo__letter michi-logo__m">M</span><span class="michi-logo__letter michi-logo__i">I</span><span class="michi-logo__letter michi-logo__c">C</span><span class="michi-logo__letter michi-logo__h">H</span><span class="michi-logo__letter michi-logo__i2">I</span><span class="michi-logo__pop">POP</span>
     </a>
     <nav class="hidden items-center gap-8 text-[11px] font-black uppercase tracking-[.17em] md:flex" aria-label="Principal">
       {navItems.map((item) => (
