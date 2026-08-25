@@ -35,6 +35,31 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .brand-hand { font-family: 'Comic Sans MS', 'Bradley Hand', cursive; }
 .accent-font { font-family: 'Caveat', cursive; }
 
+.michi-logo {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0;
+  font-family: 'Trebuchet MS', 'Arial Rounded MT Bold', Arial, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -.09em;
+  transform: translateY(-1px);
+}
+.michi-logo span { display: inline-block; }
+.michi-logo__m { color: var(--rosa); }
+.michi-logo__i { color: var(--amarillo); }
+.michi-logo__c { color: var(--lila); }
+.michi-logo__h { color: var(--menta); }
+.michi-logo__i2 { color: var(--rosa); }
+.michi-logo__pop {
+  margin-left: .17em;
+  color: var(--azul);
+  letter-spacing: -.1em;
+  text-shadow: 0 1px 0 rgba(255,255,255,.7);
+}
+.michi-logo:hover .michi-logo__pop { color: var(--menta); }
+
 .kawaii-stage { perspective: 950px; }
 .kawaii-letter {
   --pointer-x: 0;
@@ -75,6 +100,17 @@ button, a { -webkit-tap-highlight-color: transparent; }
   mix-blend-mode: multiply;
 }
 
+.flower-art {
+  transition: transform .35s cubic-bezier(.2,.8,.2,1), filter .35s ease;
+  transform-origin: 50% 60%;
+  filter: drop-shadow(0 10px 20px rgba(48,44,43,.05));
+}
+.flower-stage:hover .flower-art { filter: drop-shadow(0 14px 26px rgba(48,44,43,.09)); }
+
+.social-asset svg { display: block; }
+.social-asset { color: var(--tinta); }
+.social-asset:hover { background: white; }
+
 .soft-button { transition: transform .22s ease, box-shadow .22s ease, background-color .22s ease; }
 .soft-button:hover { transform: translateY(-2px) scale(1.015); }
 .soft-button:active { transform: translateY(1px) scale(.985); }
@@ -85,8 +121,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .hero-art { mix-blend-mode: multiply; }
 }
 
+@media (max-width: 767px) {
+  .michi-logo { font-size: 1.28rem; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .001ms !important; animation-iteration-count: 1 !important; transition-duration: .001ms !important; }
   .kawaii-letter { transform: rotate(var(--rotate)) scale(var(--scale)); }
+  .flower-art { transform: none !important; }
 }
