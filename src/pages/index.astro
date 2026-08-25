@@ -1,0 +1,35 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Hero from '../components/home/Hero.astro';
+import CategoryBlock from '../components/home/CategoryBlock.astro';
+import FeaturedProducts from '../components/home/FeaturedProducts.astro';
+import Manifesto from '../components/home/Manifesto.astro';
+import FinalCTA from '../components/home/FinalCTA.astro';
+---
+<BaseLayout title="Accesorios handmade kawaii" description="Michi Pop: llaveros, collares y accesorios handmade con colores pastel.">
+  <Nav />
+  <main>
+    <Hero />
+    <section class="px-5 py-12 lg:px-8">
+      <div class="mx-auto max-w-7xl">
+        <div class="mb-10 max-w-xl">
+          <p class="text-xs font-bold uppercase tracking-[.22em]">Elige tu pop</p>
+          <h2 class="display-font mt-3 text-5xl font-black tracking-[-.07em] md:text-6xl">Tres maneras de llevarlo.</h2>
+        </div>
+        <div class="grid gap-5 md:grid-cols-[1.05fr_.95fr]">
+          <CategoryBlock category="llaveros" title="Llaveros" blurb="Balloon dogs, charms y cuentas para que las llaves no vuelvan a parecer aburridas." href="/shop?category=llaveros" />
+          <div class="grid gap-5 md:pt-16">
+            <CategoryBlock category="collares" title="Collares" blurb="Cuentas pastel y corazones para llevar el color un poco más cerca." href="/shop?category=collares" />
+            <CategoryBlock category="accesorios" title="Accesorios" blurb="Pequeños extras para bolsos, mochilas, fundas y cualquier cosa que necesite pop." href="/shop?category=accesorios" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <FeaturedProducts />
+    <Manifesto />
+    <FinalCTA />
+  </main>
+  <Footer />
+</BaseLayout>
