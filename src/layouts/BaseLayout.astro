@@ -1,0 +1,25 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Accesorios handmade kawaii hechos con amor.' } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#FFF5EF" />
+    <title>{title} · Michi Pop</title>
+  </head>
+  <body>
+    <div class="site-shell">
+      <slot />
+    </div>
+  </body>
+</html>
