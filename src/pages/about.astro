@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import KawaiiHeading from '../components/kawaii/KawaiiHeading.astro';
+import Heart from '../components/icons/Heart.astro';
+import BalloonDog from '../components/icons/BalloonDog.astro';
+---
+<BaseLayout title="Sobre nosotros" description="La historia y forma de hacer de Michi Pop.">
+  <Nav />
+  <main class="px-5 pb-24 pt-36 lg:px-8">
+    <div class="mx-auto max-w-7xl">
+      <section class="grid items-center gap-12 md:grid-cols-[1.05fr_.95fr]">
+        <div>
+          <p class="text-xs font-bold uppercase tracking-[.22em]">Sobre Michi Pop</p>
+          <KawaiiHeading text="HECHO A MANO" colors={['rosa','menta','lila','amarillo','azul','naranja','rosa','lima','menta','lila','azul','rosa']} size="lg" class="mt-7 justify-start" />
+          <p class="mt-8 max-w-xl text-base leading-7">Michi Pop es una marca de accesorios pequeños, coloridos y hechos despacio. La idea es sencilla: hacer piezas que tengan algo de juguete, algo de objeto de diseño y bastante personalidad.</p>
+        </div>
+        <div class="relative min-h-[26rem] rounded-[3rem_1.5rem_3rem_2rem] border border-tinta bg-rosa p-8">
+          <div class="absolute left-10 top-10 rotate-[-7deg]"><BalloonDog size={130} /></div>
+          <div class="absolute right-12 top-16 rotate-[10deg]"><Heart size={70} fill="#F7D24A" /></div>
+          <div class="accent-font absolute bottom-10 right-9 text-5xl">with love</div>
+        </div>
+      </section>
+
+      <section class="mt-24 grid gap-8 border-t border-linea pt-12 md:grid-cols-3">
+        <div><p class="text-xs font-bold uppercase tracking-[.22em]">01</p><h2 class="display-font mt-3 text-4xl font-black">Pocas piezas.</h2><p class="mt-4 text-sm leading-6">El catálogo no quiere crecer por obligación. Preferimos lanzar pequeñas tandas y que cada una tenga un motivo.</p></div>
+        <div><p class="text-xs font-bold uppercase tracking-[.22em]">02</p><h2 class="display-font mt-3 text-4xl font-black">Mucho color.</h2><p class="mt-4 text-sm leading-6">Pasteles y acentos fuertes, siempre con crema y oscuro para que el conjunto respire.</p></div>
+        <div><p class="text-xs font-bold uppercase tracking-[.22em]">03</p><h2 class="display-font mt-3 text-4xl font-black">Cero plantilla.</h2><p class="mt-4 text-sm leading-6">La marca no intenta parecer una tienda genérica. Ni tampoco una landing de SaaS disfrazada de kawaii.</p></div>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>
