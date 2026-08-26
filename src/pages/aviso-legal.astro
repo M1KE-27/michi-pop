@@ -1,0 +1,115 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Star from '../components/icons/Star.astro';
+import { siteUrl } from '../lib/site';
+---
+
+<BaseLayout 
+  title="Aviso Legal — Michi Pop" 
+  description="Información identificativa del responsable y titular del sitio web michi-pop, condiciones de uso y propiedad intelectual."
+>
+  <Nav />
+
+  <main class="min-h-screen px-5 pb-24 pt-32 lg:px-8 lg:pt-36">
+    <div class="mx-auto max-w-4xl">
+      <!-- Breadcrumb -->
+      <a href={siteUrl('/')} class="text-xs font-bold uppercase tracking-[.18em] hover:underline">
+        ← Volver al inicio
+      </a>
+
+      <!-- Header -->
+      <div class="mt-8 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 rounded-full border border-tinta/20 bg-rosa/20 px-3.5 py-1 text-[11px] font-black uppercase tracking-[.2em] text-tinta">
+          <Star size={14} /> Información Legal
+        </div>
+        <h1 class="display-font mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl">
+          AVISO LEGAL
+        </h1>
+        <p class="mt-3 text-xs uppercase tracking-widest text-tinta/60">
+          Última actualización: 26 de agosto de 2026 · Conforme a la Ley 34/2002 (LSSI-CE)
+        </p>
+      </div>
+
+      <!-- Legal Identification Box -->
+      <div class="mt-10 rounded-3xl border border-linea bg-[#F8EEE7] p-6 sm:p-8">
+        <h2 class="display-font text-2xl font-black">1. Datos Identificativos del Responsable</h2>
+        <p class="mt-2 text-xs leading-relaxed text-tinta/75">
+          En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), se facilitan los siguientes datos del titular:
+        </p>
+
+        <div class="mt-6 grid gap-3 rounded-2xl border border-linea bg-white/80 p-5 text-xs">
+          <div class="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-1">
+            <span class="font-bold text-tinta">Nombre Comercial:</span>
+            <span class="text-tinta/90">Michi Pop</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-1">
+            <span class="font-bold text-tinta">Titular / Razón Social:</span>
+            <span class="text-tinta/90">[Pendiente de Razón Social / Nombre del Titular]</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-1">
+            <span class="font-bold text-tinta">NIF / CIF:</span>
+            <span class="text-tinta/90">[Pendiente de NIF/CIF]</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-1">
+            <span class="font-bold text-tinta">Domicilio de Actividad:</span>
+            <span class="text-tinta/90">C/ de la Serra d'Agullent, 23, Benicalap, 46015 València, España</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-1">
+            <span class="font-bold text-tinta">Email de Contacto:</span>
+            <a href="mailto:iam1ke@proton.me" class="font-semibold underline text-tinta hover:text-rosa">iam1ke@proton.me</a>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-1">
+            <span class="font-bold text-tinta">Teléfono de Atención:</span>
+            <span class="text-tinta/90">960 88 80 44</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-[160px_1fr] gap-1">
+            <span class="font-bold text-tinta">Datos Registrales:</span>
+            <span class="text-tinta/70">[No aplicable o pendiente de inscripción registral]</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sections -->
+      <div class="mt-8 space-y-6 text-xs leading-6 text-tinta/80 sm:text-sm sm:leading-7">
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">2. Objeto y Ámbito de Aplicación</h3>
+          <p class="mt-3">
+            El presente Aviso Legal regula el acceso, navegación y utilización del sitio web de Michi Pop, así como las responsabilidades derivadas de la utilización de sus contenidos (textos, gráficos, fotografías, software, etc.) y productos puestos a disposición de los usuarios.
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">3. Condiciones de Uso</h3>
+          <p class="mt-3">
+            El acceso a esta web atribuye la condición de Usuario y expresa la aceptación plena y sin reservas de todas y cada una de las condiciones aquí expuestas. El Usuario se compromete a hacer un uso adecuado de los contenidos y servicios de la web y a no emplearlos para incurrir en actividades ilícitas, ilegales o contrarias a la buena fe y al orden público.
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">4. Propiedad Intelectual e Industrial</h3>
+          <p class="mt-3">
+            Todos los derechos de propiedad intelectual e industrial sobre el diseño de la web, su logotipo "Michi Pop", tipografías, ilustraciones kawaii, combinaciones de color, código fuente y fotografías de producto pertenecen al titular de Michi Pop o a sus legítimos licenciantes. Queda expresamente prohibida la reproducción, distribución o comunicación pública, total o parcial, con fines comerciales sin previa autorización por escrito.
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">5. Enlaces Externos (Links)</h3>
+          <p class="mt-3">
+            En caso de que en la página se dispusiesen enlaces o hipervínculos hacia otros sitios de Internet, Michi Pop no ejercerá ningún tipo de control sobre dichos sitios y contenidos, no asumiendo responsabilidad alguna por los daños derivados de su acceso.
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">6. Legislación Aplicable y Jurisdicción</h3>
+          <p class="mt-3">
+            Las presentes condiciones se rigen por la normativa española vigente. Para la resolución de cualquier controversia relativa a este sitio web o a la actividad en él desarrollada, serán competentes los Juzgados y Tribunales del domicilio del consumidor conforme a la legislación aplicable en materia de consumidores y usuarios.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

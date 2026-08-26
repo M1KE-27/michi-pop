@@ -1,0 +1,100 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Star from '../components/icons/Star.astro';
+import { siteUrl } from '../lib/site';
+---
+
+<BaseLayout 
+  title="Condiciones de la Protección Michi — Michi Pop" 
+  description="Servicio adicional opcional de 12 meses de cobertura frente a roturas accidentales para tus accesorios Michi Pop."
+>
+  <Nav />
+
+  <main class="min-h-screen px-5 pb-24 pt-32 lg:px-8 lg:pt-36">
+    <div class="mx-auto max-w-4xl">
+      <!-- Breadcrumb -->
+      <a href={siteUrl('/')} class="text-xs font-bold uppercase tracking-[.18em] hover:underline">
+        ← Volver al inicio
+      </a>
+
+      <!-- Header -->
+      <div class="mt-8 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 rounded-full border border-tinta/20 bg-rosa/20 px-3.5 py-1 text-[11px] font-black uppercase tracking-[.2em] text-tinta">
+          <Star size={14} /> Servicio Extra Opcional
+        </div>
+        <h1 class="display-font mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl">
+          PROTECCIÓN MICHI
+        </h1>
+        <p class="mt-3 text-xs uppercase tracking-widest text-tinta/60">
+          Tranquilidad extra frente a caídas y accidentes cotidianos (+2,00 €)
+        </p>
+      </div>
+
+      <!-- Tarjeta Principal -->
+      <div class="mt-10 rounded-3xl border border-tinta bg-rosa/20 p-6 sm:p-8">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <span class="rounded-full bg-rosa px-4 py-1.5 text-xs font-black uppercase tracking-wider text-tinta border border-tinta shadow-sm">
+            🛡️ Cobertura Comercial de 12 Meses
+          </span>
+          <span class="text-base font-black text-tinta">+2,00 € / pieza</span>
+        </div>
+
+        <h2 class="display-font mt-5 text-2xl font-black">¿Qué es la Protección Michi?</h2>
+        <p class="mt-3 text-xs leading-relaxed text-tinta/85 sm:text-sm">
+          Sabemos que los charms y llaveros viven aventuras en llaves, mochilas y bolsos. La <strong>Protección Michi</strong> es un servicio comercial <strong>totalmente voluntario y opcional</strong> que puedes añadir a tu compra por solo 2,00 € para proteger tu accesorio frente a roturas accidentales durante 1 año entero.
+        </p>
+
+        <div class="mt-6 rounded-2xl border border-linea bg-white/80 p-4 text-xs text-tinta/85">
+          ℹ️ <strong>Aviso legal importante:</strong> La Protección Michi es una cobertura comercial independiente. <strong>No sustituye ni reduce la garantía legal gratuita de 3 años</strong> que ampara todos los productos frente a defectos de fabricación.
+        </div>
+      </div>
+
+      <!-- Secciones detalladas -->
+      <div class="mt-8 space-y-6 text-xs leading-6 text-tinta/80 sm:text-sm sm:leading-7">
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">1. Duración y Vigencia</h3>
+          <p class="mt-3">
+            La protección entra en vigor en la fecha de entrega del pedido y tiene una <strong>duración exacta de 12 meses naturales</strong>. Finaliza de manera automática al cumplirse dicho plazo, sin renovaciones automáticas ni cuotas ocultas.
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">2. ¿Qué Daños Están Cubiertos?</h3>
+          <ul class="mt-3 list-disc pl-5 space-y-2">
+            <li><strong>Rotura accidental del hilo o cordón:</strong> Desgarro o corte fortuito producido por enganchones en mochilas o bolsos.</li>
+            <li><strong>Pérdida de cuentas tras una caída accidental:</strong> Desprendimiento fortuito de abalorios.</li>
+            <li><strong>Avería o fractura accidental del mosquetón:</strong> Rotura del enganche por golpe fortuito.</li>
+          </ul>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">3. ¿Qué Exclusiones Existen?</h3>
+          <ul class="mt-3 list-disc pl-5 space-y-2">
+            <li><strong>Pérdida total o robo:</strong> Es necesario conservar la pieza o los restos para acreditar la rotura accidental.</li>
+            <li><strong>Manipulación intencionada o desgaste estético normal:</strong> Envejecimiento habitual del uso o quemaduras deliberadas.</li>
+          </ul>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">4. Cómo Solicitar un Reemplazo</h3>
+          <ol class="mt-3 list-decimal pl-5 space-y-2">
+            <li>Escribe a <a href="mailto:iam1ke@proton.me" class="font-bold underline text-tinta">iam1ke@proton.me</a> o contacta con el asunto <em>"Reemplazo Protección Michi - [Nº Pedido]"</em>.</li>
+            <li>Adjunta una fotografía clara donde se aprecie la rotura o daño del accesorio.</li>
+            <li>Una vez verificado en 24h, fabricaremos y te enviaremos una nueva pieza idéntica a través de NACEX. (Límite: 1 sustitución por accesorio asegurado durante el periodo de 12 meses).</li>
+            <li>Si el modelo original estuviese descatalogado, podrás elegir cualquier otro accesorio del mismo valor.</li>
+          </ol>
+        </section>
+      </div>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href={siteUrl('/shop')} class="soft-button rounded-full border border-tinta bg-rosa px-8 py-3 text-sm font-bold text-tinta shadow-[0_5px_0_rgba(244,137,160,.25)]">
+          Explorar Tienda
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

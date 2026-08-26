@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Star from '../components/icons/Star.astro';
+import { siteUrl } from '../lib/site';
+---
+
+<BaseLayout 
+  title="Contacto y Soporte — Michi Pop" 
+  description="Contacta con el equipo de Michi Pop para dudas sobre pedidos, envíos NACEX, garantías o devoluciones."
+>
+  <Nav />
+
+  <main class="min-h-screen px-5 pb-24 pt-32 lg:px-8 lg:pt-36">
+    <div class="mx-auto max-w-4xl">
+      <!-- Breadcrumb -->
+      <a href={siteUrl('/')} class="text-xs font-bold uppercase tracking-[.18em] hover:underline">
+        ← Volver al inicio
+      </a>
+
+      <!-- Header -->
+      <div class="mt-8 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 rounded-full border border-tinta/20 bg-rosa/20 px-3.5 py-1 text-[11px] font-black uppercase tracking-[.2em] text-tinta">
+          <Star size={14} /> Estamos para ayudarte
+        </div>
+        <h1 class="display-font mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl">
+          CONTACTO & SOPORTE
+        </h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-tinta/80">
+          ¿Tienes alguna duda sobre tu pedido, envíos con NACEX o quieres tramitar una garantía o devolución? Escríbenos y te responderemos en menos de 24 horas laborables.
+        </p>
+      </div>
+
+      <div class="mt-12 grid gap-8 lg:grid-cols-[1fr_1.2fr]">
+        <!-- Tarjeta de Información Directa -->
+        <div class="space-y-6">
+          <div class="rounded-3xl border border-linea bg-[#F8EEE7] p-6 sm:p-8">
+            <h2 class="display-font text-2xl font-black text-tinta">Canales Directos</h2>
+            <div class="mt-6 space-y-4 text-xs">
+              <div class="rounded-2xl border border-linea bg-white/70 p-4">
+                <span class="block text-[10px] font-black uppercase tracking-wider text-tinta/60">Correo Electrónico</span>
+                <a href="mailto:iam1ke@proton.me" class="mt-1 block text-sm font-bold text-tinta hover:text-rosa">iam1ke@proton.me</a>
+                <span class="mt-0.5 block text-tinta/70">Respuesta habitual en menos de 24h</span>
+              </div>
+
+              <div class="rounded-2xl border border-linea bg-white/70 p-4">
+                <span class="block text-[10px] font-black uppercase tracking-wider text-tinta/60">Logística & Envíos (NACEX)</span>
+                <a href="tel:960888044" class="mt-1 block text-sm font-bold text-tinta hover:text-[#EA580C]">960 88 80 44</a>
+                <span class="mt-0.5 block text-tinta/70">Atención de Lunes a Viernes (09:00 - 19:00h)</span>
+              </div>
+
+              <div class="rounded-2xl border border-linea bg-white/70 p-4">
+                <span class="block text-[10px] font-black uppercase tracking-wider text-tinta/60">Punto de Expedición</span>
+                <p class="mt-1 font-semibold text-tinta">C/ de la Serra d'Agullent, 23, Benicalap, 46015 València</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulario de Contacto -->
+        <div class="rounded-3xl border border-linea bg-white/60 p-6 sm:p-8 shadow-sm">
+          <h2 class="display-font text-2xl font-black text-tinta">Envíanos un Mensaje</h2>
+          
+          <form id="contact-form" class="mt-6 space-y-4 text-xs">
+            <div>
+              <label for="contact-name" class="block font-bold text-tinta uppercase tracking-wider">Nombre completo *</label>
+              <input type="text" id="contact-name" required placeholder="Tu nombre" class="mt-1.5 w-full rounded-2xl border border-linea bg-crema/60 px-4 py-3 text-xs text-tinta placeholder-tinta/40 focus:border-tinta focus:bg-white focus:outline-none" />
+            </div>
+
+            <div>
+              <label for="contact-email" class="block font-bold text-tinta uppercase tracking-wider">Correo electrónico *</label>
+              <input type="email" id="contact-email" required placeholder="tu@email.com" class="mt-1.5 w-full rounded-2xl border border-linea bg-crema/60 px-4 py-3 text-xs text-tinta placeholder-tinta/40 focus:border-tinta focus:bg-white focus:outline-none" />
+            </div>
+
+            <div>
+              <label for="contact-subject" class="block font-bold text-tinta uppercase tracking-wider">Motivo de la consulta *</label>
+              <select id="contact-subject" required class="mt-1.5 w-full rounded-2xl border border-linea bg-crema/60 px-4 py-3 text-xs text-tinta focus:border-tinta focus:bg-white focus:outline-none">
+                <option value="consulta">Consulta general sobre productos</option>
+                <option value="envio">Estado del envío con NACEX / Seguimiento</option>
+                <option value="devolucion">Devolución o desistimiento (14 días)</option>
+                <option value="garantia">Garantía legal por defecto</option>
+                <option value="proteccion">Solicitud de reemplazo (Protección Michi)</option>
+                <option value="otro">Otro asunto</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="contact-message" class="block font-bold text-tinta uppercase tracking-wider">Mensaje *</label>
+              <textarea id="contact-message" rows="4" required placeholder="Explícanos en qué podemos ayudarte..." class="mt-1.5 w-full rounded-2xl border border-linea bg-crema/60 px-4 py-3 text-xs text-tinta placeholder-tinta/40 focus:border-tinta focus:bg-white focus:outline-none resize-none"></textarea>
+            </div>
+
+            <!-- Cláusula de Privacidad y Consentimiento -->
+            <div class="rounded-2xl border border-linea/80 bg-[#F8EEE7]/60 p-3.5 space-y-2">
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" id="contact-consent" required class="mt-0.5 h-4 w-4 rounded border-tinta accent-rosa cursor-pointer" />
+                <span class="text-[11px] leading-4 text-tinta/80">
+                  He leído y acepto la <a href={siteUrl('/privacidad')} target="_blank" class="font-bold underline text-tinta hover:text-rosa">Política de Privacidad</a> para que Michi Pop pueda responder a mi consulta. *
+                </span>
+              </label>
+              <p class="text-[10px] text-tinta/60 leading-tight">
+                Tus datos solo se usarán para gestionar y contestar este mensaje conforme al RGPD. No compartimos tus datos con terceros sin tu consentimiento.
+              </p>
+            </div>
+
+            <button type="submit" class="soft-button w-full rounded-full border border-tinta bg-rosa py-3.5 text-xs font-bold uppercase tracking-wider text-tinta shadow-[0_5px_0_rgba(244,137,160,.25)] hover:brightness-105 transition-all">
+              Enviar Mensaje
+            </button>
+          </form>
+
+          <div id="contact-success" class="mt-4 hidden rounded-2xl border border-tinta bg-menta/30 p-4 text-center text-xs font-bold text-tinta">
+            ✅ ¡Mensaje enviado con éxito! Te responderemos muy pronto a tu correo.
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const successBox = document.getElementById('contact-success');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.classList.add('hidden');
+    successBox?.classList.remove('hidden');
+  });
+</script>

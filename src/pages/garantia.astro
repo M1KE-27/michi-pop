@@ -1,0 +1,120 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Star from '../components/icons/Star.astro';
+import { siteUrl } from '../lib/site';
+---
+
+<BaseLayout 
+  title="Garantía Legal y Productos Defectuosos — Michi Pop" 
+  description="Información sobre la garantía legal gratuita de 3 años en España y diferenciación con la Protección Michi opcional."
+>
+  <Nav />
+
+  <main class="min-h-screen px-5 pb-24 pt-32 lg:px-8 lg:pt-36">
+    <div class="mx-auto max-w-4xl">
+      <!-- Breadcrumb -->
+      <a href={siteUrl('/')} class="text-xs font-bold uppercase tracking-[.18em] hover:underline">
+        ← Volver al inicio
+      </a>
+
+      <!-- Header -->
+      <div class="mt-8 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 rounded-full border border-tinta/20 bg-rosa/20 px-3.5 py-1 text-[11px] font-black uppercase tracking-[.2em] text-tinta">
+          <Star size={14} /> Marco Legal
+        </div>
+        <h1 class="display-font mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl">
+          GARANTÍA LEGAL
+        </h1>
+        <p class="mt-3 text-xs uppercase tracking-widest text-tinta/60">
+          Protección obligatoria del consumidor conforme a la legislación española
+        </p>
+      </div>
+
+      <!-- Cuadro Destacado Garantía Legal -->
+      <div class="mt-10 rounded-3xl border border-linea bg-crema p-6 sm:p-8">
+        <div class="inline-block rounded-full bg-menta px-3.5 py-1 text-xs font-black uppercase tracking-wider text-tinta shadow-sm">
+          ⚖️ Cobertura Legal Obligatoria
+        </div>
+        <h2 class="display-font mt-4 text-2xl font-black">3 Años de Garantía Legal Gratuita</h2>
+        <p class="mt-2 text-xs leading-relaxed text-tinta/80 sm:text-sm">
+          Todos los artículos comercializados por Michi Pop cuentan con la <strong>garantía legal de 3 años</strong> establecida por el Real Decreto Legislativo 1/2007 para bienes de consumo. Esta garantía es <strong>completamente gratuita y obligatoria por ley</strong> para proteger al comprador frente a cualquier defecto de fabricación o falta de conformidad.
+        </p>
+      </div>
+
+      <!-- Tabla Comparativa Garantía vs Protección Michi -->
+      <div class="mt-10 rounded-3xl border border-linea bg-white/70 p-6 sm:p-8">
+        <h3 class="display-font text-xl font-black text-tinta">Diferencias Claras: Garantía Legal vs. Protección Michi</h3>
+        <p class="mt-2 text-xs text-tinta/70">
+          Es muy importante entender que la garantía legal y la Protección Michi son conceptos totalmente independientes:
+        </p>
+
+        <div class="mt-6 overflow-x-auto">
+          <table class="w-full text-left text-xs border border-linea rounded-2xl overflow-hidden">
+            <thead class="bg-[#F8EEE7] text-tinta uppercase tracking-wider font-bold">
+              <tr>
+                <th class="p-3.5">Característica</th>
+                <th class="p-3.5 bg-menta/20">Garantía Legal</th>
+                <th class="p-3.5 bg-rosa/20">Protección Michi (Opcional)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-linea bg-white">
+              <tr>
+                <td class="p-3.5 font-bold">Naturaleza</td>
+                <td class="p-3.5 text-tinta/85">Obligatoria por Ley</td>
+                <td class="p-3.5 text-tinta/85">Servicio comercial voluntario</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold">Coste</td>
+                <td class="p-3.5 font-bold text-tinta">0,00 € (Totalmente Gratis)</td>
+                <td class="p-3.5 font-bold text-rosa">+2,00 € por accesorio</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold">Duración</td>
+                <td class="p-3.5">3 años desde la entrega</td>
+                <td class="p-3.5">12 meses desde la compra</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold">Qué cubre</td>
+                <td class="p-3.5">Defectos de fábrica, fallos de materiales y faltas de conformidad</td>
+                <td class="p-3.5">Roturas accidentales por caídas, tirones del uso diario y desprendimientos fortuitos</td>
+              </tr>
+              <tr>
+                <td class="p-3.5 font-bold">Obligatoriedad</td>
+                <td class="p-3.5">Incluida siempre en todas tus compras</td>
+                <td class="p-3.5">Opcional (tú decides si añadirla en el checkout)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Procedimiento en caso de producto defectuoso -->
+      <div class="mt-8 space-y-6 text-xs leading-6 text-tinta/80 sm:text-sm sm:leading-7">
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">Procedimiento ante un Defecto de Fabricación</h3>
+          <p class="mt-3">
+            Si recibes una pieza que presenta un defecto de fabricación o una falta de conformidad con lo descrito en el catálogo:
+          </p>
+          <ol class="mt-3 list-decimal pl-5 space-y-2">
+            <li>Escríbenos a <a href="mailto:iam1ke@proton.me" class="font-bold underline text-tinta">iam1ke@proton.me</a> o contacta con el soporte adjuntando una foto o descripción del problema.</li>
+            <li>En un plazo de 24/48 horas valoraremos el caso y coordinaremos la recogida sin coste alguno con NACEX.</li>
+            <li>Procederemos a la reparación, sustitución por una pieza nueva o reembolso íntegro según corresponda legalmente.</li>
+          </ol>
+        </section>
+      </div>
+
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href={siteUrl('/proteccion-michi')} class="soft-button rounded-full border border-tinta bg-rosa px-8 py-3 text-sm font-bold text-tinta shadow-[0_5px_0_rgba(244,137,160,.25)]">
+          Ver detalles de la Protección Michi
+        </a>
+        <a href={siteUrl('/contacto')} class="rounded-full border border-tinta bg-crema px-8 py-3 text-sm font-bold text-tinta hover:bg-white transition-colors">
+          Contactar con Soporte
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

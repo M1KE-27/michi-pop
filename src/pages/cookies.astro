@@ -1,0 +1,140 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Star from '../components/icons/Star.astro';
+import { siteUrl } from '../lib/site';
+---
+
+<BaseLayout 
+  title="Política de Cookies — Michi Pop" 
+  description="Información detallada sobre las cookies y almacenamiento local utilizados en la web de Michi Pop y panel de configuración de preferencias."
+>
+  <Nav />
+
+  <main class="min-h-screen px-5 pb-24 pt-32 lg:px-8 lg:pt-36">
+    <div class="mx-auto max-w-4xl">
+      <!-- Breadcrumb -->
+      <a href={siteUrl('/')} class="text-xs font-bold uppercase tracking-[.18em] hover:underline">
+        ← Volver al inicio
+      </a>
+
+      <!-- Header -->
+      <div class="mt-8 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 rounded-full border border-tinta/20 bg-rosa/20 px-3.5 py-1 text-[11px] font-black uppercase tracking-[.2em] text-tinta">
+          <Star size={14} /> Transparencia
+        </div>
+        <h1 class="display-font mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl">
+          POLÍTICA DE COOKIES
+        </h1>
+        <p class="mt-3 text-xs uppercase tracking-widest text-tinta/60">
+          Conforme al artículo 22.2 de la Ley 34/2002 (LSSI-CE) y Directiva ePrivacy
+        </p>
+      </div>
+
+      <!-- Action Box -->
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 rounded-3xl border border-tinta bg-rosa/20 p-6 sm:p-8">
+        <div>
+          <h2 class="display-font text-xl font-black text-tinta">Tus Preferencias de Cookies</h2>
+          <p class="mt-1 text-xs text-tinta/80">Puedes revisar o cambiar tu consentimiento en cualquier momento.</p>
+        </div>
+        <button 
+          id="reopen-cookie-modal" 
+          type="button" 
+          class="soft-button whitespace-nowrap rounded-full border border-tinta bg-crema px-6 py-3 text-xs font-bold uppercase tracking-wider text-tinta shadow-[0_4px_0_rgba(244,137,160,.3)] hover:bg-white transition-all"
+        >
+          ⚙️ Modificar Preferencias
+        </button>
+      </div>
+
+      <!-- Sections -->
+      <div class="mt-8 space-y-6 text-xs leading-6 text-tinta/80 sm:text-sm sm:leading-7">
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">1. ¿Qué son las Cookies?</h3>
+          <p class="mt-3">
+            Una cookie o mecanismo de almacenamiento web local (LocalStorage) es un pequeño archivo que se almacena en tu dispositivo al visitar sitios web. Sirven para recordar tus acciones y preferencias durante un periodo de tiempo, garantizar la seguridad de la navegación y hacer que la tienda online funcione adecuadamente.
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">2. Tipos de Cookies y Tecnologías Utilizadas</h3>
+          
+          <div class="mt-4 space-y-4">
+            <div class="rounded-2xl border border-linea bg-white/80 p-4">
+              <span class="font-black text-tinta uppercase tracking-wider">A) Cookies Técnicas y Estrictamente Necesarias</span>
+              <p class="mt-1 text-xs text-tinta/75">
+                Son aquellas que permiten al usuario la navegación a través de la página web y la utilización de las diferentes opciones o servicios que en ella existen (por ejemplo, controlar el tráfico, identificar la sesión de compra, guardar la cesta de productos y recordar las preferencias de privacidad). Están <strong>siempre activas</strong> por ser esenciales para el servicio.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-linea bg-white/80 p-4">
+              <span class="font-black text-tinta uppercase tracking-wider">B) Cookies de Preferencias</span>
+              <p class="mt-1 text-xs text-tinta/75">
+                Permiten recordar información para que el usuario acceda al servicio con ciertas características que pueden diferenciar su experiencia (por ejemplo, filtros de búsqueda o moneda). <strong>Desactivadas por defecto</strong>.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-linea bg-white/80 p-4">
+              <span class="font-black text-tinta uppercase tracking-wider">C) Cookies de Análisis y Rendimiento</span>
+              <p class="mt-1 text-xs text-tinta/75">
+                Permiten cuantificar el número de visitas y analizar de forma anónima el comportamiento de navegación para mejorar la tienda. <strong>Desactivadas por defecto</strong>.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-linea bg-white/80 p-4">
+              <span class="font-black text-tinta uppercase tracking-wider">D) Cookies de Publicidad / Marketing</span>
+              <p class="mt-1 text-xs text-tinta/75">
+                Almacenan información del comportamiento de los usuarios para mostrar contenidos publicitarios afines. <strong>Desactivadas por defecto</strong>.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">3. Tabla Real de Tecnologías Utilizadas</h3>
+          <div class="mt-4 overflow-x-auto">
+            <table class="w-full text-left text-xs border border-linea rounded-2xl overflow-hidden">
+              <thead class="bg-[#F8EEE7] text-tinta uppercase tracking-wider font-bold">
+                <tr>
+                  <th class="p-3">Nombre</th>
+                  <th class="p-3">Tipo</th>
+                  <th class="p-3">Finalidad</th>
+                  <th class="p-3">Duración</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-linea bg-white">
+                <tr>
+                  <td class="p-3 font-mono font-bold">michi_cookie_consent_v1</td>
+                  <td class="p-3">Técnica (LocalStorage)</td>
+                  <td class="p-3">Guarda la elección y configuración de cookies del usuario.</td>
+                  <td class="p-3">12 meses</td>
+                </tr>
+                <tr>
+                  <td class="p-3 font-mono font-bold">michi_cart_v1</td>
+                  <td class="p-3">Técnica (LocalStorage)</td>
+                  <td class="p-3">Mantiene los productos seleccionados en la cesta de la tienda.</td>
+                  <td class="p-3">Sesión / Local</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">4. Cómo Desactivar Cookies en tu Navegador</h3>
+          <p class="mt-3">
+            Además de nuestro panel de configuración, puedes permitir, bloquear o eliminar las cookies instaladas en tu equipo mediante la configuración de las opciones de tu navegador de Internet (Chrome, Safari, Firefox, Edge). Si bloqueas las cookies técnicas necesarias, es posible que algunas funcionalidades de la tienda online no operen de forma correcta.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  document.getElementById('reopen-cookie-modal')?.addEventListener('click', () => {
+    window.dispatchEvent(new CustomEvent('open-cookie-settings'));
+  });
+</script>

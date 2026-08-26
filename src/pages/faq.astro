@@ -1,0 +1,129 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Star from '../components/icons/Star.astro';
+import { siteUrl } from '../lib/site';
+
+const faqs = [
+  {
+    category: 'Envíos y Logística',
+    items: [
+      {
+        q: '¿Cómo y desde dónde se envían los pedidos?',
+        a: 'Todos los pedidos se preparan a mano y se despachan diariamente con el servicio de mensajería urgente NACEX desde el centro logístico oficial en C/ de la Serra d\'Agullent, 23, Benicalap, Valencia.',
+      },
+      {
+        q: '¿Cuánto tarda en llegar mi compra?',
+        a: 'Para la Península Ibérica, el plazo habitual de entrega es de 24 a 48 horas laborables desde que el paquete sale del taller. Para Baleares es de 48 a 72 horas.',
+      },
+      {
+        q: '¿Cómo puedo hacer el seguimiento de mi paquete?',
+        a: 'En cuanto NACEX recoge el pedido, recibirás un correo o SMS con tu número de seguimiento oficial para consultar la entrega en tiempo real.',
+      },
+    ],
+  },
+  {
+    category: 'Productos y Charms',
+    items: [
+      {
+        q: '¿Las fotos con termos o botellas incluyen el recipiente?',
+        a: 'No. En Michi Pop elaboramos y vendemos exclusivamente los charms, abalorios y colgantes artesanales. Las botellas, termos, estuches o mochilas que aparecen en las imágenes son únicamente ejemplos ilustrativos de uso.',
+      },
+      {
+        q: '¿Son piezas hechas a mano?',
+        a: 'Sí, cada collar, llavero y charm se ensambla y revisa pieza a pieza con mucho cariño para garantizar su calidad y acabado kawaii.',
+      },
+    ],
+  },
+  {
+    category: 'Garantía Legal vs Protección Michi',
+    items: [
+      {
+        q: '¿Qué garantía tienen los productos por ley?',
+        a: 'Todos nuestros productos tienen la garantía legal obligatoria y gratuita de 3 años frente a defectos de fabricación o fallos de conformidad, conforme a la normativa española.',
+      },
+      {
+        q: '¿Qué es la Protección Michi de +2,00 €?',
+        a: 'Es una cobertura comercial opcional y voluntaria de 12 meses frente a roturas accidentales por caídas, tirones o uso diario. Si se rompe por accidente, te enviamos un reemplazo. No sustituye ni limita tu garantía legal gratuita de 3 años.',
+      },
+    ],
+  },
+  {
+    category: 'Devoluciones y Cambios',
+    items: [
+      {
+        q: '¿Puedo devolver un producto si cambio de opinión?',
+        a: 'Sí, dispones de 14 días naturales desde la recepción para devolver cualquier artículo estándar sin usar y en su embalaje original.',
+      },
+      {
+        q: '¿Cómo solicito una devolución?',
+        a: 'Escríbenos a iam1ke@proton.me o mediante el formulario de contacto con tu número de pedido y te indicaremos los pasos sencillos para gestionarlo.',
+      },
+    ],
+  },
+];
+---
+
+<BaseLayout 
+  title="Preguntas Frecuentes — Michi Pop" 
+  description="Respuestas a las dudas más comunes sobre envíos NACEX, confección de charms, garantía legal y Protección Michi."
+>
+  <Nav />
+
+  <main class="min-h-screen px-5 pb-24 pt-32 lg:px-8 lg:pt-36">
+    <div class="mx-auto max-w-4xl">
+      <!-- Breadcrumb -->
+      <a href={siteUrl('/')} class="text-xs font-bold uppercase tracking-[.18em] hover:underline">
+        ← Volver al inicio
+      </a>
+
+      <!-- Header -->
+      <div class="mt-8 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 rounded-full border border-tinta/20 bg-rosa/20 px-3.5 py-1 text-[11px] font-black uppercase tracking-[.2em] text-tinta">
+          <Star size={14} /> Centro de Ayuda
+        </div>
+        <h1 class="display-font mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl">
+          PREGUNTAS FRECUENTES
+        </h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-tinta/80">
+          Todo lo que necesitas saber sobre cómo compramos, creamos, enviamos y garantizamos tus accesorios favoritos.
+        </p>
+      </div>
+
+      <!-- FAQ Groups -->
+      <div class="mt-12 space-y-10">
+        {faqs.map((group) => (
+          <section class="space-y-4">
+            <h2 class="display-font text-2xl font-black text-tinta tracking-tight">
+              {group.category}
+            </h2>
+            <div class="space-y-3">
+              {group.items.map((item) => (
+                <details class="group rounded-3xl border border-linea bg-white/60 p-5 sm:p-6 transition-all duration-200 open:bg-[#F8EEE7]/80">
+                  <summary class="flex cursor-pointer items-center justify-between font-bold text-sm text-tinta outline-none">
+                    <span>{item.q}</span>
+                    <span class="ml-4 font-black text-base transition-transform duration-200 group-open:rotate-45">+</span>
+                  </summary>
+                  <p class="mt-4 text-xs leading-6 text-tinta/80 sm:text-sm border-t border-linea/60 pt-3">
+                    {item.a}
+                  </p>
+                </details>
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
+
+      <div class="mt-14 rounded-3xl border border-linea bg-crema p-8 text-center">
+        <h3 class="display-font text-xl font-black text-tinta">¿No encuentras lo que buscas?</h3>
+        <p class="mt-2 text-xs text-tinta/80">Escríbenos directamente y te responderemos encantados.</p>
+        <a href={siteUrl('/contacto')} class="soft-button mt-5 inline-block rounded-full border border-tinta bg-rosa px-8 py-3 text-xs font-bold uppercase tracking-wider text-tinta shadow-[0_5px_0_rgba(244,137,160,.25)]">
+          Ir al formulario de contacto
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

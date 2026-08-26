@@ -1,0 +1,370 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Star from '../components/icons/Star.astro';
+import { products } from '../data/products';
+import { siteUrl } from '../lib/site';
+
+const initialProduct = products[0] || {
+  slug: 'llavero-bubble-dog',
+  name: 'Bubble Dog',
+  price: 5.99,
+  image: 'llavero-bubble-dog.webp',
+  description: 'Llavero de abalorios hecho a mano.',
+};
+---
+
+<BaseLayout 
+  title="Finalizar Compra — Michi Pop" 
+  description="Pasarela de checkout seguro para adquirir tus accesorios handmade en Michi Pop con envío rápido NACEX y Protección Michi opcional."
+>
+  <Nav />
+
+  <main class="min-h-screen px-5 pb-24 pt-32 lg:px-8 lg:pt-36">
+    <div class="mx-auto max-w-5xl">
+      <!-- Breadcrumb -->
+      <a href={siteUrl('/shop')} class="text-xs font-bold uppercase tracking-[.18em] hover:underline">
+        ← Volver a la tienda
+      </a>
+
+      <!-- Header -->
+      <div class="mt-8 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 rounded-full border border-tinta/20 bg-rosa/20 px-3.5 py-1 text-[11px] font-black uppercase tracking-[.2em] text-tinta">
+          <Star size={14} /> Compra Segura y Transparente
+        </div>
+        <h1 class="display-font mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl">
+          FINALIZAR COMPRA
+        </h1>
+        <p class="mt-2 text-xs text-tinta/70">
+          Revisa tu pedido, tus opciones de protección y los datos de envío con NACEX.
+        </p>
+      </div>
+
+      <div id="checkout-view" class="mt-10 grid gap-8 lg:grid-cols-[1.2fr_1fr]">
+        <!-- Columna Izquierda: Formulario de Envío y Facturación -->
+        <div class="rounded-3xl border border-linea bg-white/60 p-6 sm:p-8 shadow-sm">
+          <h2 class="display-font text-2xl font-black text-tinta">1. Datos de Entrega</h2>
+          <p class="mt-1 text-xs text-tinta/70">Envíos gestionados con NACEX desde Valencia (24/48h laborables).</p>
+
+          <form id="checkout-form" class="mt-6 space-y-4 text-xs">
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="buyer-name" class="block font-bold text-tinta uppercase tracking-wider">Nombre *</label>
+                <input type="text" id="buyer-name" required placeholder="Tu nombre" class="mt-1.5 w-full rounded-2xl border border-linea bg-crema/60 px-4 py-3 text-xs text-tinta placeholder-tinta/40 focus:border-tinta focus:bg-white focus:outline-none" />
+              </div>
+              <div>
+                <label for="buyer-surname" class="block font-bold text-tinta uppercase tracking-wider">Apellidos *</label>
+                <input type="text" id="buyer-surname" required placeholder="Tus apellidos" class="mt-1.5 w-full rounded-2xl border border-linea bg-crema/60 px-4 py-3 text-xs text-tinta placeholder-tinta/40 focus:border-tinta focus:bg-white focus:outline-none" />
+              </div>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="buyer-email" class="block font-bold text-tinta uppercase tracking-wider">Correo Electrónico *</label>
+                <input type="email" id="buyer-email" required placeholder="para la confirmación" class="mt-1.5 w-full rounded-2xl border border-linea bg-crema/60 px-4 py-3 text-xs text-tinta placeholder-tinta/40 focus:border-tinta focus:bg-white focus:outline-none" />
+              </div>
+              <div>
+                <label for="buyer-phone" class="block font-bold text-tinta uppercase tracking-wider">Teléfono de contacto *</label>
+                <input type="tel" id="buyer-phone" required placeholder="para aviso de NACEX" class="mt-1.5 w-full rounded-2xl border border-linea bg-crema/60 px-4 py-3 text-xs text-tinta placeholder-tinta/40 focus:border-tinta focus:bg-white focus:outline-none" />
+              </div>
+            </div>
+
+            <div>
+              <label for="buyer-address" class="block font-bold text-tinta uppercase tracking-wider">Dirección de Envío *</label>
+              <input type="text" id="buyer-address" required placeholder="Calle, número, piso o puerta" class="mt-1.5 w-full rounded-2xl border border-linea bg-crema/60 px-4 py-3 text-xs text-tinta placeholder-tinta/40 focus:border-tinta focus:bg-white focus:outline-none" />
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-3">
+              <div>
+                <label for="buyer-postal" class="block font-bold text-tinta uppercase tracking-wider">Código Postal *</label>
+                <input type="text" id="buyer-postal" required placeholder="Ej: 46015" class="mt-1.5 w-full rounded-2xl border border-linea bg-crema/60 px-4 py-3 text-xs text-tinta placeholder-tinta/40 focus:border-tinta focus:bg-white focus:outline-none" />
+              </div>
+              <div>
+                <label for="buyer-city" class="block font-bold text-tinta uppercase tracking-wider">Ciudad / Población *</label>
+                <input type="text" id="buyer-city" required placeholder="Tu ciudad" class="mt-1.5 w-full rounded-2xl border border-linea bg-crema/60 px-4 py-3 text-xs text-tinta placeholder-tinta/40 focus:border-tinta focus:bg-white focus:outline-none" />
+              </div>
+              <div>
+                <label for="buyer-province" class="block font-bold text-tinta uppercase tracking-wider">Provincia *</label>
+                <input type="text" id="buyer-province" required placeholder="Provincia" class="mt-1.5 w-full rounded-2xl border border-linea bg-crema/60 px-4 py-3 text-xs text-tinta placeholder-tinta/40 focus:border-tinta focus:bg-white focus:outline-none" />
+              </div>
+            </div>
+
+            <h2 class="display-font pt-4 text-2xl font-black text-tinta">2. Método de Pago</h2>
+            <div class="rounded-2xl border border-linea bg-crema/40 p-4 space-y-2">
+              <label class="flex items-center gap-3 cursor-pointer">
+                <input type="radio" name="payment" value="card" checked class="h-4 w-4 accent-rosa cursor-pointer">
+                <span class="font-bold text-tinta">Tarjeta Bancaria / Bizum (Pasarela Segura)</span>
+              </label>
+              <p class="text-[11px] text-tinta/65 pl-7">Pago encriptado con protocolo SSL y autenticación bancaria directa.</p>
+            </div>
+
+            <!-- Casilla de Aceptación Legal Obligatoria (Desmarcada por defecto) -->
+            <div class="rounded-2xl border border-linea bg-[#F8EEE7] p-4 space-y-2 mt-6">
+              <label class="flex items-start gap-2.5 cursor-pointer">
+                <input type="checkbox" id="terms-consent" required class="mt-0.5 h-4 w-4 rounded border-tinta accent-rosa cursor-pointer" />
+                <span class="text-[11px] leading-4 text-tinta font-medium">
+                  He leído y acepto expresamente las <a href={siteUrl('/condiciones-compra')} target="_blank" class="font-bold underline hover:text-rosa">Condiciones Generales de Compra</a> y la <a href={siteUrl('/privacidad')} target="_blank" class="font-bold underline hover:text-rosa">Política de Privacidad</a>. *
+                </span>
+              </label>
+              <p class="text-[10px] text-tinta/60 leading-tight pl-6">
+                Este consentimiento quedará registrado junto a los datos del pedido conforme a la legislación española.
+              </p>
+            </div>
+
+            <button type="submit" id="complete-order-btn" class="soft-button mt-4 w-full rounded-full border border-tinta bg-rosa py-4 text-sm font-black uppercase tracking-wider text-tinta shadow-[0_6px_0_rgba(244,137,160,.3)] hover:brightness-105 transition-all">
+              Confirmar y Pagar Pedido
+            </button>
+          </form>
+        </div>
+
+        <!-- Columna Derecha: Resumen del Pedido y Protección Michi -->
+        <div class="space-y-6">
+          <div class="rounded-3xl border border-linea bg-[#F8EEE7] p-6 sm:p-8">
+            <h2 class="display-font text-2xl font-black text-tinta">Resumen del Pedido</h2>
+
+            <!-- Artículo -->
+            <div class="mt-6 flex items-center gap-4 rounded-2xl border border-linea bg-white/80 p-4">
+              <img 
+                src={siteUrl(`/products/${initialProduct.image}`)} 
+                alt={initialProduct.name} 
+                class="h-16 w-16 rounded-xl object-cover border border-linea" 
+              />
+              <div class="flex-1 min-w-0">
+                <h3 class="display-font font-black text-sm text-tinta truncate">{initialProduct.name}</h3>
+                <p class="text-[11px] text-tinta/70">Unidades: 1 · Pieza hecha a mano</p>
+                <p class="text-xs font-bold text-tinta mt-0.5">{initialProduct.price.toFixed(2).replace('.', ',')} €</p>
+              </div>
+            </div>
+
+            <!-- SECCIÓN PROTECCIÓN MICHI (Opcional - Desmarcada por defecto) -->
+            <div class="mt-6 rounded-2xl border-2 border-dashed border-rosa bg-white/90 p-4.5 transition-all duration-200" id="michi-protection-card">
+              <div class="flex items-start gap-3">
+                <input 
+                  type="checkbox" 
+                  id="michi-protection-toggle" 
+                  class="mt-1 h-5 w-5 rounded border-tinta accent-rosa cursor-pointer" 
+                />
+                <div class="flex-1">
+                  <label for="michi-protection-toggle" class="cursor-pointer">
+                    <span class="flex items-center gap-1.5 font-black text-xs uppercase tracking-wider text-tinta">
+                      🛡️ Añadir Protección Michi por +2,00 €
+                    </span>
+                    <span class="block mt-1 text-[11px] leading-relaxed text-tinta/80">
+                      Protección adicional durante <strong>12 meses</strong> frente a roturas accidentales por caídas o tirones del uso diario. Si se rompe, te enviamos un reemplazo. <a href={siteUrl('/proteccion-michi')} target="_blank" class="font-bold underline text-tinta hover:text-rosa">Consulta las condiciones</a>.
+                    </span>
+                  </label>
+                  
+                  <div class="mt-2.5 flex items-center gap-1.5 text-[10px] text-tinta/60">
+                    <span>⚖️</span>
+                    <span>La <strong>garantía legal de 3 años</strong> es gratuita e independiente de este servicio comercial voluntario.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Desglose de Precios -->
+            <div class="mt-6 space-y-2.5 border-t border-linea pt-5 text-xs">
+              <div class="flex justify-between text-tinta/80">
+                <span>Subtotal producto (1 ud):</span>
+                <span class="font-semibold" id="summary-subtotal">5,99 €</span>
+              </div>
+
+              <div id="protection-row" class="hidden justify-between text-tinta font-semibold bg-rosa/20 -mx-2 px-2 py-1 rounded-lg">
+                <span>🛡️ Protección Michi (12 meses):</span>
+                <span>+2,00 €</span>
+              </div>
+
+              <div class="flex justify-between text-tinta/80">
+                <span>Envío Express NACEX (24/48h):</span>
+                <span class="font-semibold text-menta">GRATIS</span>
+              </div>
+
+              <div class="flex justify-between text-[11px] text-tinta/60">
+                <span>IVA incluido (21%):</span>
+                <span id="summary-tax">1,04 €</span>
+              </div>
+
+              <div class="flex justify-between border-t border-linea pt-3 text-base font-black text-tinta">
+                <span>TOTAL A PAGAR:</span>
+                <span class="display-font text-xl text-tinta" id="summary-total">5,99 €</span>
+              </div>
+            </div>
+
+            <div class="mt-5 rounded-xl border border-linea bg-crema p-3 text-[10px] leading-4 text-tinta/75 text-center">
+              🚚 Expedición inmediata desde <strong>C/ de la Serra d'Agullent, 23, Valencia</strong> con NACEX.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vista de Confirmación Exitosa (Oculta al inicio) -->
+      <div id="order-success-view" class="hidden mt-10 rounded-3xl border border-tinta bg-crema p-8 sm:p-12 shadow-xl text-center max-w-2xl mx-auto">
+        <div class="inline-flex h-16 w-16 items-center justify-center rounded-full bg-menta text-2xl font-black text-tinta shadow-md">
+          ✓
+        </div>
+        <h2 class="display-font mt-4 text-3xl font-black text-tinta">¡Pedido Confirmado con Éxito!</h2>
+        <p class="mt-2 text-xs text-tinta/80">
+          Hemos recibido tu solicitud y ya estamos preparando tus accesorios artesanalmente con mucho mimo.
+        </p>
+
+        <!-- Recibo y Documentación Guardada -->
+        <div class="mt-6 rounded-2xl border border-linea bg-white/90 p-5 text-left text-xs space-y-2.5">
+          <div class="flex justify-between border-b border-linea pb-2">
+            <span class="font-bold text-tinta">Número de Pedido:</span>
+            <span class="font-mono font-bold" id="receipt-order-id">#MICHI-8921</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-tinta/70">Fecha y Hora:</span>
+            <span id="receipt-date">26/08/2026</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-tinta/70">Destinatario:</span>
+            <span id="receipt-buyer" class="font-semibold text-tinta"></span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-tinta/70">Dirección de Entrega:</span>
+            <span id="receipt-address" class="text-right"></span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-tinta/70">Transportista:</span>
+            <span class="font-semibold text-[#EA580C]">NACEX Express (24/48h)</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-tinta/70">Condiciones Aceptadas:</span>
+            <span class="text-[10px] text-tinta/80">Versión 1.0 (26/08/2026)</span>
+          </div>
+          <div class="flex justify-between border-t border-linea pt-2" id="receipt-protection-box">
+            <span class="font-bold text-tinta">Protección Michi:</span>
+            <span id="receipt-protection-status" class="font-semibold"></span>
+          </div>
+          <div class="flex justify-between border-t border-linea pt-2 font-black text-sm text-tinta">
+            <span>Importe Total Cobrado:</span>
+            <span id="receipt-total" class="font-bold">5,99 €</span>
+          </div>
+        </div>
+
+        <p class="mt-4 text-[11px] text-tinta/65">
+          Se ha enviado la confirmación y el detalle de la compra al correo facilitado.
+        </p>
+
+        <div class="mt-8 flex justify-center gap-4">
+          <a href={siteUrl('/shop')} class="soft-button rounded-full border border-tinta bg-rosa px-8 py-3 text-xs font-bold uppercase tracking-wider text-tinta shadow-[0_5px_0_rgba(244,137,160,.25)]">
+            Seguir Explorando
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<script>
+  const protectionToggle = document.getElementById('michi-protection-toggle') as HTMLInputElement;
+  const protectionRow = document.getElementById('protection-row');
+  const summaryTotal = document.getElementById('summary-total');
+  const summaryTax = document.getElementById('summary-tax');
+  const checkoutForm = document.getElementById('checkout-form') as HTMLFormElement;
+  const checkoutView = document.getElementById('checkout-view');
+  const successView = document.getElementById('order-success-view');
+
+  const BASE_PRICE = 5.99;
+  const PROTECTION_PRICE = 2.00;
+
+  function updatePricing() {
+    const withProtection = protectionToggle?.checked;
+    const total = withProtection ? (BASE_PRICE + PROTECTION_PRICE) : BASE_PRICE;
+    const tax = total * (0.21 / 1.21); // IVA 21% incluido
+
+    if (protectionRow) {
+      protectionRow.classList.toggle('hidden', !withProtection);
+      protectionRow.classList.toggle('flex', withProtection);
+    }
+
+    if (summaryTotal) {
+      summaryTotal.textContent = total.toFixed(2).replace('.', ',') + ' €';
+    }
+
+    if (summaryTax) {
+      summaryTax.textContent = tax.toFixed(2).replace('.', ',') + ' €';
+    }
+  }
+
+  protectionToggle?.addEventListener('change', updatePricing);
+
+  checkoutForm?.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const name = (document.getElementById('buyer-name') as HTMLInputElement)?.value;
+    const surname = (document.getElementById('buyer-surname') as HTMLInputElement)?.value;
+    const email = (document.getElementById('buyer-email') as HTMLInputElement)?.value;
+    const phone = (document.getElementById('buyer-phone') as HTMLInputElement)?.value;
+    const address = (document.getElementById('buyer-address') as HTMLInputElement)?.value;
+    const postal = (document.getElementById('buyer-postal') as HTMLInputElement)?.value;
+    const city = (document.getElementById('buyer-city') as HTMLInputElement)?.value;
+    const province = (document.getElementById('buyer-province') as HTMLInputElement)?.value;
+    const hasProtection = !!protectionToggle?.checked;
+    const total = hasProtection ? (BASE_PRICE + PROTECTION_PRICE) : BASE_PRICE;
+
+    const orderId = 'MICHI-' + Math.floor(1000 + Math.random() * 9000);
+    const orderDate = new Date();
+    const protectionEndDate = new Date();
+    protectionEndDate.setFullYear(orderDate.getFullYear() + 1);
+
+    const orderData = {
+      orderId,
+      date: orderDate.toISOString(),
+      items: [{ name: 'Bubble Dog', price: BASE_PRICE, quantity: 1 }],
+      shipping: {
+        carrier: 'NACEX Express',
+        origin: "C/ de la Serra d'Agullent, 23, Benicalap, 46015 Valencia",
+        cost: 0.00
+      },
+      protectionMichi: {
+        contracted: hasProtection,
+        price: hasProtection ? PROTECTION_PRICE : 0.00,
+        durationMonths: 12,
+        startDate: orderDate.toISOString(),
+        endDate: hasProtection ? protectionEndDate.toISOString() : null
+      },
+      total,
+      termsAccepted: true,
+      termsVersion: '1.0 (26/08/2026)',
+      buyer: { name: `${name} ${surname}`, email, phone, address: `${address}, ${postal} ${city} (${province})` }
+    };
+
+    // Guardar registro completo del pedido en localStorage
+    try {
+      const orders = JSON.parse(localStorage.getItem('michi_orders_history') || '[]');
+      orders.push(orderData);
+      localStorage.setItem('michi_orders_history', JSON.stringify(orders));
+    } catch (err) {
+      console.error('Error guardando pedido:', err);
+    }
+
+    // Actualizar vista de recibo
+    const receiptOrderId = document.getElementById('receipt-order-id');
+    const receiptDate = document.getElementById('receipt-date');
+    const receiptBuyer = document.getElementById('receipt-buyer');
+    const receiptAddress = document.getElementById('receipt-address');
+    const receiptProtectionStatus = document.getElementById('receipt-protection-status');
+    const receiptTotal = document.getElementById('receipt-total');
+
+    if (receiptOrderId) receiptOrderId.textContent = '#' + orderId;
+    if (receiptDate) receiptDate.textContent = orderDate.toLocaleDateString('es-ES') + ' · ' + orderDate.toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' });
+    if (receiptBuyer) receiptBuyer.textContent = `${name} ${surname}`;
+    if (receiptAddress) receiptAddress.textContent = `${address}, ${city} (${postal})`;
+    if (receiptProtectionStatus) {
+      receiptProtectionStatus.textContent = hasProtection 
+        ? 'Activa (12 meses hasta ' + protectionEndDate.toLocaleDateString('es-ES') + ')' 
+        : 'No contratada';
+      receiptProtectionStatus.className = hasProtection ? 'font-bold text-rosa' : 'text-tinta/60';
+    }
+    if (receiptTotal) receiptTotal.textContent = total.toFixed(2).replace('.', ',') + ' €';
+
+    checkoutView?.classList.add('hidden');
+    successView?.classList.remove('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>

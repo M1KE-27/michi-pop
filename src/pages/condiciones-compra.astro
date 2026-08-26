@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import Star from '../components/icons/Star.astro';
+import { siteUrl } from '../lib/site';
+---
+
+<BaseLayout 
+  title="Condiciones Generales de Compra — Michi Pop" 
+  description="Términos y condiciones aplicables a las compras en la tienda online Michi Pop, derecho de desistimiento, garantía legal y Protección Michi."
+>
+  <Nav />
+
+  <main class="min-h-screen px-5 pb-24 pt-32 lg:px-8 lg:pt-36">
+    <div class="mx-auto max-w-4xl">
+      <!-- Breadcrumb -->
+      <a href={siteUrl('/')} class="text-xs font-bold uppercase tracking-[.18em] hover:underline">
+        ← Volver al inicio
+      </a>
+
+      <!-- Header -->
+      <div class="mt-8 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 rounded-full border border-tinta/20 bg-rosa/20 px-3.5 py-1 text-[11px] font-black uppercase tracking-[.2em] text-tinta">
+          <Star size={14} /> Contratación Online
+        </div>
+        <h1 class="display-font mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl">
+          CONDICIONES DE COMPRA
+        </h1>
+        <p class="mt-3 text-xs uppercase tracking-widest text-tinta/60">
+          Vigentes desde el 26 de agosto de 2026 · Conforme al Real Decreto Legislativo 1/2007
+        </p>
+      </div>
+
+      <!-- Resumen Clave -->
+      <div class="mt-10 grid gap-4 sm:grid-cols-3">
+        <div class="rounded-2xl border border-linea bg-[#F8EEE7] p-5 text-center sm:text-left">
+          <span class="text-lg">📦</span>
+          <h3 class="display-font mt-2 text-sm font-black">Envíos con NACEX</h3>
+          <p class="mt-1 text-xs text-tinta/75">Entrega 24/48h desde Valencia.</p>
+        </div>
+        <div class="rounded-2xl border border-linea bg-crema p-5 text-center sm:text-left">
+          <span class="text-lg">⚖️</span>
+          <h3 class="display-font mt-2 text-sm font-black">Garantía Legal de 3 Años</h3>
+          <p class="mt-1 text-xs text-tinta/75">Gratuita y obligatoria por ley.</p>
+        </div>
+        <div class="rounded-2xl border border-linea bg-rosa/20 p-5 text-center sm:text-left">
+          <span class="text-lg">🛡️</span>
+          <h3 class="display-font mt-2 text-sm font-black">Protección Michi (+2,00 €)</h3>
+          <p class="mt-1 text-xs text-tinta/75">Cobertura voluntaria de 12 meses.</p>
+        </div>
+      </div>
+
+      <!-- Secciones -->
+      <div class="mt-10 space-y-6 text-xs leading-6 text-tinta/80 sm:text-sm sm:leading-7">
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">1. Objeto y Datos del Vendedor</h3>
+          <p class="mt-3">
+            Las presentes Condiciones Generales de Compra regulan la adquisición de productos ofrecidos a través de la tienda online de Michi Pop, operada por [Pendiente de Razón Social / Titular], con NIF [Pendiente de NIF/CIF] y domicilio en C/ de la Serra d'Agullent, 23, Benicalap, 46015 València, España.
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">2. Proceso de Pedido y Formalización</h3>
+          <p class="mt-3">
+            El cliente puede navegar por el catálogo, seleccionar los accesorios deseados y añadirlos a la cesta. Al acceder al checkout, se mostrará el desglose detallado de los productos, su precio unitario, los gastos de envío aplicables y los impuestos. Antes de formalizar la compra, el cliente deberá aceptar expresamente estas Condiciones Generales mediante una casilla no premarcada.
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">3. Precios e Impuestos</h3>
+          <p class="mt-3">
+            Todos los precios mostrados en la tienda están expresados en Euros (€) e incluyen el Impuesto sobre el Valor Añadido (IVA) legalmente aplicable en España. Los gastos de envío se detallan de forma previa y transparente antes del pago.
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">4. Envíos y Plazos de Entrega</h3>
+          <p class="mt-3">
+            Los envíos se realizan desde nuestro centro de expedición en Valencia con el servicio de mensajería urgente <strong>NACEX</strong>. El plazo estimado de entrega en la Península Ibérica es de <strong>24 a 48 horas laborables</strong> tras la preparación del pedido. Para más información, consulta nuestra <a href={siteUrl('/envios')} class="font-bold underline text-tinta">Política de Envíos</a>.
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">5. Naturaleza de los Productos y Muestras de Uso</h3>
+          <p class="mt-3">
+            Las piezas de Michi Pop son accesorios, charms y llaveros elaborados artesanalmente con cuentas y abalorios. En los casos donde un producto se exhiba colocado sobre un termo, botella, funda o mochila, dichos objetos de soporte actúan únicamente como ejemplo ilustrativo de uso y <strong>no forman parte del producto comercializado</strong>.
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">6. Derecho Legal de Desistimiento</h3>
+          <p class="mt-3">
+            Conforme al artículo 68 y siguientes del RDL 1/2007, el cliente dispone de <strong>14 días naturales</strong> desde la recepción del producto para desistir de la compra sin necesidad de justificación. El producto debe encontrarse sin usar, en su embalaje original y en perfecto estado. Para ejercerlo, contacta con <a href="mailto:iam1ke@proton.me" class="font-bold underline text-tinta">iam1ke@proton.me</a>.
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">7. Garantía Legal de Conformidad</h3>
+          <p class="mt-3">
+            Todos los productos gozan de la garantía legal de <strong>3 años</strong> prevista en la legislación española para bienes de consumo. Esta garantía cubre defectos de fabricación y faltas de conformidad existentes en el momento de la entrega, siendo <strong>totalmente gratuita y obligatoria por ley</strong>. Consulta los detalles en nuestra página de <a href={siteUrl('/garantia')} class="font-bold underline text-tinta">Garantía Legal</a>.
+          </p>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-rosa/15 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">8. Servicio Comercial Opcional: Protección Michi (+2,00 €)</h3>
+          <div class="mt-3 space-y-3">
+            <p>
+              El cliente tiene la opción voluntaria de contratar durante el checkout el servicio adicional <strong>Protección Michi</strong> por un coste de +2,00 € por accesorio.
+            </p>
+            <p>
+              <strong>Cobertura:</strong> Protección frente a roturas accidentales de la pieza (rotura de hilo, desprendimiento accidental de cuentas o mosquetón) durante <strong>12 meses</strong> desde la fecha de compra. En caso de rotura accidental justificada, Michi Pop enviará un reemplazo sin coste de la pieza.
+            </p>
+            <p>
+              <strong>Diferenciación legal:</strong> La Protección Michi es un servicio comercial optativo que <strong>no sustituye ni reduce en ningún caso la garantía legal gratuita de 3 años</strong> ni los derechos del consumidor. La casilla en el checkout se mantiene desmarcada por defecto.
+            </p>
+            <p>
+              Consulta las condiciones completas en la sección de <a href={siteUrl('/proteccion-michi')} class="font-bold underline text-tinta">Condiciones de la Protección Michi</a>.
+            </p>
+          </div>
+        </section>
+
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold text-tinta">9. Resolución de Conflictos</h3>
+          <p class="mt-3">
+            Conforme al Art. 14.1 del Reglamento (UE) 524/2013, la Comisión Europea facilita una plataforma de resolución de litigios en línea disponible en: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" class="font-bold underline text-tinta">https://ec.europa.eu/consumers/odr</a>.
+          </p>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

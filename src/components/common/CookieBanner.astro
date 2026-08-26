@@ -1,0 +1,171 @@
+---
+import { siteUrl } from '../../lib/site';
+---
+
+<aside id="cookie-banner" class="fixed inset-x-4 bottom-4 z-50 mx-auto hidden max-w-2xl rounded-3xl border border-tinta bg-crema/95 p-5 shadow-[0_12px_32px_rgba(0,0,0,0.12)] backdrop-blur-md transition-all duration-300 sm:bottom-6 sm:p-6" aria-label="Aviso y consentimiento de cookies">
+  <div class="flex flex-col gap-4">
+    <div class="flex items-start justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="text-xl" aria-hidden="true">🍪</span>
+        <h2 class="display-font text-base font-black tracking-tight text-tinta">Configuración de Privacidad y Cookies</h2>
+      </div>
+      <button id="cookie-close-quick" class="text-tinta/50 hover:text-tinta text-lg font-bold" aria-label="Cerrar aviso temporalmente">✕</button>
+    </div>
+
+    <p class="text-xs leading-relaxed text-tinta/80">
+      Utilizamos cookies técnicas y almacenamiento local estrictamente necesarios para el funcionamiento de la tienda y la gestión de tu cesta. Las cookies de análisis o preferencias solo se activarán si decides aceptarlas. Puedes consultar nuestra <a href={siteUrl('/cookies')} class="font-bold underline hover:text-tinta">Política de Cookies</a> y nuestra <a href={siteUrl('/privacidad')} class="font-bold underline hover:text-tinta">Política de Privacidad</a>.
+    </p>
+
+    <div class="flex flex-wrap items-center justify-end gap-2.5 pt-1">
+      <button id="cookie-manage-btn" type="button" class="rounded-full border border-tinta/40 bg-transparent px-4 py-2 text-[11px] font-bold uppercase tracking-wider text-tinta hover:border-tinta hover:bg-white/50 transition-colors">
+        Configurar
+      </button>
+      <button id="cookie-reject-btn" type="button" class="rounded-full border border-tinta bg-white px-4 py-2 text-[11px] font-bold uppercase tracking-wider text-tinta hover:bg-crema transition-colors">
+        Rechazar no necesarias
+      </button>
+      <button id="cookie-accept-all-btn" type="button" class="rounded-full border border-tinta bg-rosa px-4 py-2 text-[11px] font-bold uppercase tracking-wider text-tinta shadow-[0_4px_0_rgba(244,137,160,.3)] hover:brightness-105 transition-all">
+        Aceptar todas
+      </button>
+    </div>
+  </div>
+</aside>
+
+<!-- Modal de Preferencias Detalladas -->
+<div id="cookie-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/40 p-4 backdrop-blur-sm" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
+  <div class="w-full max-w-lg rounded-3xl border border-tinta bg-crema p-6 shadow-2xl sm:p-8 max-h-[90vh] overflow-y-auto">
+    <div class="flex items-center justify-between border-b border-linea pb-4">
+      <h3 id="cookie-modal-title" class="display-font text-lg font-black text-tinta">Panel de Preferencias de Cookies</h3>
+      <button id="cookie-modal-close" class="text-tinta/60 hover:text-tinta text-xl font-black">✕</button>
+    </div>
+
+    <div class="mt-5 space-y-4 text-xs">
+      <!-- Necesarias -->
+      <div class="rounded-2xl border border-linea bg-white/60 p-4">
+        <div class="flex items-center justify-between">
+          <label class="font-black uppercase tracking-wider text-tinta">1. Cookies Técnicas y Necesarias</label>
+          <span class="rounded-full bg-tinta/10 px-2.5 py-0.5 text-[10px] font-black text-tinta">Siempre activas</span>
+        </div>
+        <p class="mt-2 text-tinta/75">
+          Imprescindibles para que la web funcione correctamente (gestión de la cesta de compra, seguridad y almacenamiento de este propio consentimiento). No se pueden desactivar.
+        </p>
+      </div>
+
+      <!-- Preferencias -->
+      <div class="rounded-2xl border border-linea bg-white/60 p-4">
+        <div class="flex items-center justify-between">
+          <label for="cookie-pref-toggle" class="font-black uppercase tracking-wider text-tinta cursor-pointer">2. Cookies de Preferencias</label>
+          <input type="checkbox" id="cookie-pref-toggle" class="h-4 w-4 rounded border-tinta accent-rosa cursor-pointer">
+        </div>
+        <p class="mt-2 text-tinta/75">
+          Permiten recordar información para que accedas al servicio con características de carácter general predefinidas (como filtros de tienda o visualización).
+        </p>
+      </div>
+
+      <!-- Analítica -->
+      <div class="rounded-2xl border border-linea bg-white/60 p-4">
+        <div class="flex items-center justify-between">
+          <label for="cookie-analytics-toggle" class="font-black uppercase tracking-wider text-tinta cursor-pointer">3. Cookies de Análisis</label>
+          <input type="checkbox" id="cookie-analytics-toggle" class="h-4 w-4 rounded border-tinta accent-rosa cursor-pointer">
+        </div>
+        <p class="mt-2 text-tinta/75">
+          Permiten cuantificar el número de usuarios y realizar la medición y análisis estadístico de la utilización que hacen los usuarios de la web para mejorar la oferta de productos. Desactivadas por defecto.
+        </p>
+      </div>
+
+      <!-- Marketing -->
+      <div class="rounded-2xl border border-linea bg-white/60 p-4">
+        <div class="flex items-center justify-between">
+          <label for="cookie-marketing-toggle" class="font-black uppercase tracking-wider text-tinta cursor-pointer">4. Cookies de Publicidad / Marketing</label>
+          <input type="checkbox" id="cookie-marketing-toggle" class="h-4 w-4 rounded border-tinta accent-rosa cursor-pointer">
+        </div>
+        <p class="mt-2 text-tinta/75">
+          Almacenan información del comportamiento de los usuarios para mostrar publicidad personalizada. Desactivadas por defecto.
+        </p>
+      </div>
+    </div>
+
+    <div class="mt-6 flex flex-wrap items-center justify-end gap-3 border-t border-linea pt-4">
+      <button id="cookie-save-prefs-btn" type="button" class="w-full sm:w-auto rounded-full border border-tinta bg-rosa px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-tinta shadow-[0_4px_0_rgba(244,137,160,.3)] hover:brightness-105 transition-all">
+        Guardar configuración
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const COOKIE_STORAGE_KEY = 'michi_cookie_consent_v1';
+  const banner = document.getElementById('cookie-banner');
+  const modal = document.getElementById('cookie-modal');
+  const prefToggle = document.getElementById('cookie-pref-toggle') as HTMLInputElement;
+  const analyticsToggle = document.getElementById('cookie-analytics-toggle') as HTMLInputElement;
+  const marketingToggle = document.getElementById('cookie-marketing-toggle') as HTMLInputElement;
+
+  function getConsent() {
+    try {
+      const item = localStorage.getItem(COOKIE_STORAGE_KEY);
+      return item ? JSON.parse(item) : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function saveConsent(consent: { necessary: boolean; preferences: boolean; analytics: boolean; marketing: boolean }) {
+    try {
+      const data = {
+        ...consent,
+        timestamp: new Date().toISOString(),
+        version: '1.0'
+      };
+      localStorage.setItem(COOKIE_STORAGE_KEY, JSON.stringify(data));
+      window.dispatchEvent(new CustomEvent('michi-cookies-updated', { detail: data }));
+    } catch (e) {
+      console.error('No se pudo guardar el consentimiento:', e);
+    }
+    banner?.classList.add('hidden');
+    modal?.classList.add('hidden');
+    modal?.classList.remove('flex');
+  }
+
+  function openSettings() {
+    const existing = getConsent();
+    if (prefToggle) prefToggle.checked = !!existing?.preferences;
+    if (analyticsToggle) analyticsToggle.checked = !!existing?.analytics;
+    if (marketingToggle) marketingToggle.checked = !!existing?.marketing;
+    modal?.classList.remove('hidden');
+    modal?.classList.add('flex');
+  }
+
+  // Inicializar estado del banner
+  const consent = getConsent();
+  if (!consent) {
+    banner?.classList.remove('hidden');
+  }
+
+  // Listeners de botones
+  document.getElementById('cookie-accept-all-btn')?.addEventListener('click', () => {
+    saveConsent({ necessary: true, preferences: true, analytics: true, marketing: true });
+  });
+
+  document.getElementById('cookie-reject-btn')?.addEventListener('click', () => {
+    saveConsent({ necessary: true, preferences: false, analytics: false, marketing: false });
+  });
+
+  document.getElementById('cookie-manage-btn')?.addEventListener('click', openSettings);
+  document.getElementById('cookie-close-quick')?.addEventListener('click', () => banner?.classList.add('hidden'));
+  document.getElementById('cookie-modal-close')?.addEventListener('click', () => {
+    modal?.classList.add('hidden');
+    modal?.classList.remove('flex');
+  });
+
+  document.getElementById('cookie-save-prefs-btn')?.addEventListener('click', () => {
+    saveConsent({
+      necessary: true,
+      preferences: !!prefToggle?.checked,
+      analytics: !!analyticsToggle?.checked,
+      marketing: !!marketingToggle?.checked
+    });
+  });
+
+  // Listener global para reabrir ajustes desde cualquier parte de la web
+  window.addEventListener('open-cookie-settings', openSettings);
+</script>

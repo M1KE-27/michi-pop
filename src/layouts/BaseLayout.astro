@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import CookieBanner from '../components/common/CookieBanner.astro';
 
 interface Props {
   title: string;
@@ -26,5 +27,6 @@ const asset = (path: string) => `${BASE_URL}${path.replace(/^\//, '')}`;
     <div class="site-shell">
       <slot />
     </div>
+    <CookieBanner />
   </body>
 </html>
