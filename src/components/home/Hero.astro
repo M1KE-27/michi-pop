@@ -1,31 +1,31 @@
 ---
 import { siteUrl } from '../../lib/site';
-import KawaiiHeading from '../kawaii/KawaiiHeading.astro';
 import Heart from '../icons/Heart.astro';
 import Star from '../icons/Star.astro';
 ---
-<section class="relative overflow-hidden px-5 pb-4 pt-20 sm:pb-6 lg:px-8 lg:pt-24">
-  <div class="mx-auto grid max-w-[1304px] items-center gap-1 lg:grid-cols-[.96fr_1.04fr]">
-    <div class="pb-2 lg:pb-5">
-      <div class="mb-4 flex items-center gap-2.5 text-[10px] font-black uppercase tracking-[.18em] sm:text-[11px]">
+<section class="relative overflow-hidden px-5 pb-8 pt-20 sm:pb-10 lg:px-8 lg:pt-24">
+  <div class="mx-auto grid max-w-[1304px] items-center gap-6 lg:grid-cols-[.98fr_1.02fr] lg:gap-4">
+    <div class="relative z-10 pb-2 lg:pb-8">
+      <div class="mb-3 flex items-center gap-2.5 text-[10px] font-black uppercase tracking-[.18em] sm:text-[11px]">
         <Star size={18} />
         <span>Hecho a mano, con amor</span>
       </div>
 
-      <KawaiiHeading
-        text="PEQUEÑOS DETALLES"
-        colors={['rosa','amarillo','lila','menta','naranja','azul','lima','rosa','amarillo','lila','menta','azul','rosa','amarillo','lila','menta']}
-        size="sm"
-        class="justify-start [&_h1]:justify-start [&_h1]:max-w-[650px]"
-      />
-
-      <div class="mt-3 flex items-end gap-3">
-        <p class="brand-serif text-5xl leading-[.9] tracking-[-.045em] sm:text-6xl lg:text-[4.35rem]">gran alegría.</p>
-        <Heart size={24} fill="#F489A0" class="mb-1.5" />
+      <div class="hero-logo-wrap relative -ml-2 w-[min(100%,620px)] sm:-ml-3 lg:-ml-4">
+        <img
+          src={siteUrl('/brand/michi-pop-logo.webp')}
+          alt="Michi Pop — Handmade with love"
+          width="1536"
+          height="1024"
+          sizes="(min-width: 1024px) 48vw, 94vw"
+          fetchpriority="high"
+          decoding="async"
+          class="hero-logo block h-auto w-full object-contain"
+        />
       </div>
 
-      <p class="mt-4 max-w-[33rem] text-sm leading-6 sm:text-base">Accesorios handmade en pequeño formato, con colores pastel y un poquito de caos bonito.</p>
-      <a href={siteUrl('/shop')} class="soft-button mt-5 inline-flex items-center gap-3 rounded-full bg-rosa px-6 py-3.5 text-sm font-bold text-tinta shadow-[0_7px_0_rgba(244,137,160,.22)]">
+      <p class="mt-2 max-w-[33rem] text-sm leading-6 sm:mt-0 sm:text-base">Accesorios handmade en pequeño formato, con colores pastel y un poquito de caos bonito.</p>
+      <a href={siteUrl('/shop')} class="soft-button mt-5 inline-flex items-center gap-3 rounded-full bg-rosa px-6 py-3.5 text-sm font-bold text-tinta shadow-[0_7px_0_rgba(244,137,160,.22)] transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0">
         Descubre la colección <span aria-hidden="true">→</span>
       </a>
     </div>
@@ -49,10 +49,30 @@ import Star from '../icons/Star.astro';
         sizes="190px"
         loading="eager"
         decoding="async"
-        class="hero-note pointer-events-none absolute right-[-1%] top-[4%] w-[150px] sm:right-[0] sm:w-[175px] lg:w-[190px]"
+        class="hero-note pointer-events-none absolute right-[-1%] top-[4%] w-[150px] sm:right-0 sm:w-[175px] lg:w-[190px]"
       />
-      <div class="absolute left-[12%] top-[12%] rotate-[-11deg]"><Heart size={32} fill="#F489A0" /></div>
-      <div class="absolute left-[4%] bottom-[17%] rotate-[-8deg]"><Star size={39} /></div>
+      <div class="absolute left-[12%] top-[12%] rotate-[-11deg] motion-safe:animate-[hero-float_4s_ease-in-out_infinite]"><Heart size={32} fill="#F489A0" /></div>
+      <div class="absolute left-[4%] bottom-[17%] rotate-[-8deg] motion-safe:animate-[hero-float_5s_ease-in-out_1s_infinite]"><Star size={39} /></div>
     </div>
   </div>
+
+  <style>
+    @keyframes hero-float {
+      0%, 100% { transform: translateY(0) rotate(-11deg); }
+      50% { transform: translateY(-6px) rotate(-8deg); }
+    }
+
+    .hero-logo-wrap {
+      animation: hero-logo-in 700ms cubic-bezier(.2,.8,.2,1) both;
+    }
+
+    @keyframes hero-logo-in {
+      from { opacity: 0; transform: translateY(10px) scale(.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .hero-logo-wrap { animation: none; }
+    }
+  </style>
 </section>
