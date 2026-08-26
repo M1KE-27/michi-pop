@@ -19,7 +19,7 @@ export const products: Product[] = [
     category: 'llaveros',
     colors: ['azul', 'menta', 'lila'],
     available: true,
-    image: 'llavero-bubble-dog.png',
+    image: 'llavero-bubble-dog.webp',
     description: 'Un pequeño perrito lleno de color para darle personalidad a tus llaves, mochila o bolso. Está formado por abalorios combinados a mano para conseguir ese acabado divertido y único de Michi Pop.',
   },
   {
@@ -29,7 +29,7 @@ export const products: Product[] = [
     category: 'llaveros',
     colors: ['rosa', 'lila'],
     available: true,
-    image: 'llavero-love.png',
+    image: 'llavero-love.webp',
     description: 'Nuestro charm más romántico: una combinación de tonos rosas y lilas con un pequeño corazón que convierte cualquier bolso, mochila o estuche en un accesorio mucho más tuyo.',
   },
   {
@@ -39,7 +39,7 @@ export const products: Product[] = [
     category: 'collares',
     colors: ['lima', 'menta', 'lila'],
     available: true,
-    image: 'collar-candy.png',
+    image: 'collar-candy.webp',
     description: 'Un collar con efecto de bolsa de chuches: cuentas verdes, menta y lilas mezcladas para crear una pieza alegre, original y fácil de combinar. De esos accesorios que hacen que un look sencillo cambie por completo.',
   },
   {
@@ -49,7 +49,7 @@ export const products: Product[] = [
     category: 'collares',
     colors: ['azul', 'naranja', 'menta'],
     available: true,
-    image: 'collar-mint-heart.png',
+    image: 'collar-mint-heart.webp',
     description: 'Una mezcla fresca de tonos menta, azul y naranja con un corazón central que aporta el toque divertido. Una pieza pequeña pero muy llamativa para llevarla todos los días.',
   },
   {
@@ -59,7 +59,7 @@ export const products: Product[] = [
     category: 'accesorios',
     colors: ['rosa', 'amarillo', 'lima'],
     available: true,
-    image: 'charm-flower-party.png',
+    image: 'charm-flower-party.webp',
     description: 'Un estallido de color en formato charm. Sus tonos rosas, amarillos y lima hacen que quede genial colgado del bolso, mochila, neceser o combinado con otros accesorios de Michi Pop.',
   },
   {
@@ -69,7 +69,7 @@ export const products: Product[] = [
     category: 'accesorios',
     colors: ['lila', 'rosa', 'naranja', 'azul'],
     available: true,
-    image: 'clip-candy.png',
+    image: 'clip-candy.webp',
     description: 'Color por todas partes. Un clip alegre y original con cuentas en lila, rosa, naranja y azul para engancharlo donde quieras y añadir ese pequeño detalle que hace diferente cualquier accesorio.',
   },
   {
@@ -79,7 +79,7 @@ export const products: Product[] = [
     category: 'accesorios',
     colors: ['rosa', 'menta'],
     available: true,
-    image: 'botella-michi-pop.png',
+    image: 'botella-michi-pop.webp',
     description: 'Botella Michi Pop decorada con el universo y la energía de la marca para mantenerte hidratado con estilo.',
   },
   {
@@ -89,7 +89,7 @@ export const products: Product[] = [
     category: 'accesorios',
     colors: ['rosa', 'menta'],
     available: true,
-    image: 'termo-michi-pop.png',
+    image: 'termo-michi-pop.webp',
     description: 'Termo Michi Pop para llevar tu bebida fría o caliente con un toque adorable y único.',
   },
 ];
