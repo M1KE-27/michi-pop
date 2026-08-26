@@ -1,6 +1,5 @@
 ---
 import { siteUrl } from '../../lib/site';
-import KawaiiHeading from '../kawaii/KawaiiHeading.astro';
 import Heart from '../icons/Heart.astro';
 import Star from '../icons/Star.astro';
 ---
@@ -12,11 +11,15 @@ import Star from '../icons/Star.astro';
         <span>Hecho a mano, con amor</span>
       </div>
 
-      <KawaiiHeading
-        text="PEQUEÑOS DETALLES"
-        colors={['rosa','amarillo','lila','menta','naranja','azul','lima','rosa','amarillo','lila','menta','azul','rosa','amarillo','lila','menta']}
-        size="sm"
-        class="justify-start [&_h1]:justify-start [&_h1]:max-w-[650px]"
+      <img
+        src={siteUrl('/brand/michi-pop-logo.webp')}
+        alt="Michi Pop — Handmade with Love"
+        width="700"
+        height="500"
+        sizes="(min-width: 1024px) 520px, 88vw"
+        fetchpriority="high"
+        decoding="async"
+        class="hero-logo block h-auto w-[min(88vw,520px)] object-contain object-left"
       />
 
       <div class="mt-3 flex items-end gap-3">
@@ -25,7 +28,7 @@ import Star from '../icons/Star.astro';
       </div>
 
       <p class="mt-4 max-w-[33rem] text-sm leading-6 sm:text-base">Accesorios handmade en pequeño formato, con colores pastel y un poquito de caos bonito.</p>
-      <a href={siteUrl('/shop')} class="soft-button mt-5 inline-flex items-center gap-3 rounded-full bg-tinta px-6 py-3.5 text-sm font-bold text-crema shadow-[0_7px_0_rgba(48,44,43,.14)]">
+      <a href={siteUrl('/shop')} class="soft-button mt-5 inline-flex items-center gap-3 rounded-full bg-rosa px-6 py-3.5 text-sm font-bold text-tinta shadow-[0_7px_0_rgba(244,137,160,.22)]">
         Descubre la colección <span aria-hidden="true">→</span>
       </a>
     </div>
