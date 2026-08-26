@@ -1,0 +1,139 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/layout/Nav.astro';
+import Footer from '../components/layout/Footer.astro';
+import KawaiiHeading from '../components/kawaii/KawaiiHeading.astro';
+import Star from '../components/icons/Star.astro';
+import { siteUrl } from '../lib/site';
+---
+
+<BaseLayout 
+  title="Política de Envíos y Devoluciones — Michi Pop" 
+  description="Información detallada sobre nuestros envíos con NACEX desde Valencia (Benicalap), plazos de entrega en 24/48h y condiciones de devolución."
+>
+  <Nav />
+  
+  <main class="min-h-screen px-5 pb-24 pt-32 lg:px-8 lg:pt-36">
+    <div class="mx-auto max-w-4xl">
+      <!-- Breadcrumb -->
+      <a href={siteUrl('/')} class="text-xs font-bold uppercase tracking-[.18em] hover:underline">
+        ← Volver al inicio
+      </a>
+
+      <!-- Header Section -->
+      <div class="mt-8 text-center sm:text-left">
+        <div class="inline-flex items-center gap-2 rounded-full border border-tinta/20 bg-rosa/20 px-3.5 py-1 text-[11px] font-black uppercase tracking-[.2em] text-tinta">
+          <Star size={14} /> Logística & Garantía Michi Pop
+        </div>
+        <h1 class="display-font mt-4 text-4xl font-black tracking-[-0.04em] sm:text-6xl lg:text-7xl">
+          ENVÍOS Y DEVOLUCIONES
+        </h1>
+        <p class="mt-4 max-w-2xl text-base leading-relaxed text-tinta/80">
+          En Michi Pop tratamos cada pedido con el mismo cuidado con el que hacemos nuestras piezas. Aquí tienes todos los detalles sobre cómo preparamos, enviamos y garantizamos tu compra.
+        </p>
+      </div>
+
+      <!-- Main Logistics Grid -->
+      <div class="mt-12 grid gap-6 sm:grid-cols-2">
+        <!-- Tarjeta NACEX -->
+        <div class="rounded-3xl border border-linea bg-[#F8EEE7] p-6 sm:p-8">
+          <div class="flex items-center justify-between">
+            <span class="rounded-full bg-[#EA580C] px-3.5 py-1 text-xs font-black uppercase tracking-wider text-white shadow-sm">
+              Transporte Oficial
+            </span>
+            <span class="text-xs font-bold text-tinta/60">NACEX Express</span>
+          </div>
+          <h2 class="display-font mt-5 text-2xl font-black">Centro de Expedición</h2>
+          <p class="mt-2 text-xs leading-relaxed text-tinta/75">
+            Todos nuestros envíos se tramitan y despachan diariamente a través del punto logístico oficial de NACEX en Valencia.
+          </p>
+
+          <div class="mt-6 space-y-3 rounded-2xl border border-linea bg-white/70 p-4 text-xs">
+            <div class="flex items-start gap-2.5">
+              <span class="font-bold text-tinta">📍 Dirección:</span>
+              <span class="text-tinta/80">C/ de la Serra d'Agullent, 23, Benicalap, 46015 València</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="font-bold text-tinta">📞 Teléfono:</span>
+              <a href="tel:960888044" class="font-semibold text-tinta underline hover:text-[#EA580C]">960 88 80 44</a>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="font-bold text-tinta">⏰ Horario de salidas:</span>
+              <span class="text-tinta/80">Lunes a Viernes · Cierre de expedición 19:00h</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Plazos y Tiempos -->
+        <div class="rounded-3xl border border-linea bg-crema p-6 sm:p-8">
+          <div class="inline-block rounded-full bg-menta px-3.5 py-1 text-xs font-black uppercase tracking-wider text-tinta shadow-sm">
+            24 / 48 Horas
+          </div>
+          <h2 class="display-font mt-5 text-2xl font-black">Plazos de Entrega</h2>
+          
+          <ul class="mt-4 space-y-3 text-xs leading-relaxed text-tinta/80">
+            <li class="flex items-start gap-2">
+              <span class="text-menta font-black">✔</span>
+              <span><strong>Península Ibérica:</strong> 24 a 48 horas laborables desde que el paquete sale de nuestras manos.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-menta font-black">✔</span>
+              <span><strong>Islas Baleares:</strong> 48 a 72 horas laborables.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-menta font-black">✔</span>
+              <span><strong>Seguimiento activo:</strong> Recibirás un enlace y código de seguimiento NACEX para saber dónde está tu pedido en todo momento.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Secciones detalladas -->
+      <div class="mt-10 space-y-6">
+        <!-- Embalaje y Preparación -->
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold tracking-tight">1. Preparación y Mimo en el Paquete</h3>
+          <p class="mt-3 text-xs leading-6 text-tinta/80 sm:text-sm">
+            Cada llavero, collar o charm de Michi Pop está hecho o revisado a mano. Embalamos cada producto con protección adecuada contra golpes y presentación especial para que la experiencia al abrirlo sea tan colorida como el diseño.
+          </p>
+        </section>
+
+        <!-- Aclaración de Productos (Charms / Muestras) -->
+        <section class="rounded-3xl border border-dashed border-tinta/30 bg-rosa/10 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold tracking-tight">2. Especificaciones de Producto y Accesorios</h3>
+          <p class="mt-3 text-xs leading-6 text-tinta/85 sm:text-sm">
+            En Michi Pop nos especializamos en <strong>accesorios, abalorios y charms hechos a mano</strong>. En aquellos productos mostrados junto a termos, botellas, fundas o bolsos, estos últimos se muestran exclusivamente a modo de ejemplo decorativo e ilustrativo del uso del charm, siendo el accesorio/charm artesanal lo que conforma el producto adquirido.
+          </p>
+        </section>
+
+        <!-- Política de Devoluciones -->
+        <section class="rounded-3xl border border-linea bg-white/40 p-6 sm:p-8">
+          <h3 class="display-font text-xl font-extrabold tracking-tight">3. Devoluciones y Cambios</h3>
+          <div class="mt-3 space-y-3 text-xs leading-6 text-tinta/80 sm:text-sm">
+            <p>
+              Tienes un plazo de <strong>14 días naturales</strong> desde la entrega para solicitar la devolución o cambio de cualquier artículo estándar si no estás completamente satisfecho.
+            </p>
+            <p>
+              Para que la devolución sea aprobada, el artículo debe encontrarse sin usar, en las mismas condiciones en que fue recibido y en su envoltorio original.
+            </p>
+            <p>
+              En caso de recibir una pieza con algún desperfecto derivado del transporte, contáctanos dentro de las 48h posteriores a la entrega con una fotografía para gestionar el reemplazo inmediato a través de NACEX.
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- CTA Botones -->
+      <div class="mt-12 flex flex-wrap items-center justify-center gap-4 text-center">
+        <a href={siteUrl('/shop')} class="soft-button rounded-full border border-tinta bg-rosa px-8 py-3.5 text-sm font-bold text-tinta shadow-[0_6px_0_rgba(244,137,160,.25)]">
+          Ir al catálogo
+        </a>
+        <a href={siteUrl('/')} class="rounded-full border border-tinta bg-crema px-8 py-3.5 text-sm font-bold text-tinta hover:bg-white transition-colors">
+          Inicio
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>

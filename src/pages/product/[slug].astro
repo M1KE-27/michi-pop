@@ -38,6 +38,24 @@ const colorClass: Record<string, string> = {
             <span class={`rounded-full border border-tinta px-4 py-2 text-[10px] font-black uppercase tracking-[.14em] ${product.available ? '' : 'opacity-50'}`}>{product.available ? 'Disponible' : 'Agotado'}</span>
             <button disabled class="cursor-not-allowed rounded-full bg-tinta px-6 py-3 text-sm font-bold text-crema opacity-55">Añadir a la cesta</button>
           </div>
+
+          {(product.slug.includes('botella') || product.slug.includes('termo')) && (
+            <div class="mt-5 rounded-2xl border border-dashed border-tinta/30 bg-rosa/15 p-3.5 text-xs leading-relaxed text-tinta/85">
+              💡 <strong>Importante:</strong> Se vende el charm/colgante decorativo artesanal. La botella o termo mostrados sirven únicamente como ejemplo ilustrativo de uso.
+            </div>
+          )}
+
+          <div class="mt-6 rounded-2xl border border-linea bg-white/40 p-4 text-xs">
+            <div class="flex items-center gap-2 font-bold text-tinta">
+              <svg class="h-4 w-4 text-[#EA580C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              <span>Envíos rápidos con NACEX</span>
+            </div>
+            <p class="mt-1 text-tinta/70">
+              Despachamos desde Valencia (C/ de la Serra d'Agullent, 23) en 24-48h laborables. 
+              <a href={siteUrl('/shipping')} class="font-semibold underline hover:text-tinta">Consultar política de envíos</a>.
+            </p>
+          </div>
+
           <p class="mt-4 max-w-md text-xs leading-5 text-tinta/65">El prototipo muestra el catálogo y la experiencia visual. El checkout llegará después.</p>
         </div>
       </div>

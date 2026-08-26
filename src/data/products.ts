@@ -74,23 +74,23 @@ export const products: Product[] = [
   },
   {
     slug: 'botella-michi-pop',
-    name: 'Botella Michi Pop',
+    name: 'Charm para Botella',
     price: 5.99,
     category: 'accesorios',
     colors: ['rosa', 'menta'],
     available: true,
     image: 'botella-michi-pop.webp',
-    description: 'Botella Michi Pop decorada con el universo y la energía de la marca para mantenerte hidratado con estilo.',
+    description: 'Charm colgante artesanal de abalorios para darle un toque alegre y único a tu botella de agua, termo o bolso. (Nota: La botella mostrada es un ejemplo de uso decorativo).',
   },
   {
     slug: 'termo-michi-pop',
-    name: 'Termo Michi Pop',
+    name: 'Charm para Termo',
     price: 5.99,
     category: 'accesorios',
     colors: ['rosa', 'menta'],
     available: true,
     image: 'termo-michi-pop.webp',
-    description: 'Termo Michi Pop para llevar tu bebida fría o caliente con un toque adorable y único.',
+    description: 'Colgante mini de cuentas y charms para personalizar el asa de tu termo, cantimplora o mochila. (Nota: El termo en la imagen es un ejemplo ilustrativo de colocación).',
   },
 ];
 
