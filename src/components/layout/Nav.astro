@@ -50,7 +50,7 @@ const currentPath = basePath && pathname.startsWith(basePath)
           aria-current={currentPath === item.href ? 'page' : undefined}
         >{item.label}</a>
       ))}
-      <a class="mt-1 rounded-full bg-tinta px-4 py-3 text-center text-crema" href={siteUrl('/shop#cart')}>Cesta (0)</a>
+      <a class="mt-1 rounded-full border border-tinta bg-rosa px-4 py-3 text-center text-tinta shadow-[0_5px_0_rgba(244,137,160,.18)]" href={siteUrl('/shop#cart')}>Cesta (0)</a>
     </div>
   </nav>
 </header>
