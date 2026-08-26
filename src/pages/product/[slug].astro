@@ -21,7 +21,7 @@ const colorClass: Record<string, string> = {
       <a href={siteUrl('/shop')} class="text-xs font-bold uppercase tracking-[.18em] hover:underline">← Volver a la tienda</a>
       <div class="mt-7 grid items-start gap-10 lg:grid-cols-[1.05fr_.95fr] lg:gap-16">
         <div class="overflow-hidden rounded-[1.6rem] bg-[#F8EEE7]">
-          <img src={siteUrl(`/products/${product.image}.webp`)} alt={`${product.name}, ${product.category} handmade de Michi Pop`} width="900" height="900" sizes="(min-width: 1024px) 55vw, 100vw" loading="eager" fetchpriority="high" decoding="async" class="aspect-square w-full object-cover" />
+          <img src={siteUrl(`/products/${product.image}`)} alt={`${product.name}, ${product.category} handmade de Michi Pop`} width="900" height="900" sizes="(min-width: 1024px) 55vw, 100vw" loading="eager" fetchpriority="high" decoding="async" class="aspect-square w-full object-cover" />
         </div>
         <div class="max-w-xl pt-4">
           <p class="text-[10px] font-black uppercase tracking-[.22em]">{product.category}</p>
