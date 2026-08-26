@@ -9,7 +9,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "lighthouse:local": "npx --yes lighthouse http://localhost:4321/about/ --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=html --output-path=./lighthouse-about.html",
-    "lighthouse:production": "npx --yes lighthouse https://lightgray-ostrich-908108.hostingersite.com/about/ --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=html --output-path=./lighthouse-about-production.html"
+    "lighthouse:production": "npx --yes lighthouse https://lightgray-ostrich-908108.hostingersite.com/about/ --only-categories=performance,accessibility,best-practices,seo --preset=desktop --output=html --output-path=./lighthouse-about-production.html",
+    "deploy": "./deploy.sh"
   },
   "dependencies": {
     "@astrojs/react": "^4.4.0",
